@@ -1,0 +1,66 @@
+# =========================================================
+# Continual Unlearning with Memory Consolidation — Config
+# =========================================================
+
+seed: 42
+device: "cuda"  # falls back to cpu automatically if unavailable
+
+model:
+  base_model: "gpt2"          # HuggingFace model id
+  use_lora: true
+  lora:
+    r: 8
+    alpha: 16
+    dropout: 0.05
+    target_modules: ["c_attn", "c_proj"]   # GPT-2 attention/proj layers
+  max_length: 256
+
+dataset:
+  name: "tofu"                 # "tofu" | "hatexplain"
+  forget_split: "forget10"     # TOFU convention: forget1/forget5/forget10
+  retain_split: "retain90"
+  eval_split: "holdout"
+  cache_dir: "./data_cache"
+  num_forget_samples: 200      # cap for quick iterations; null = use all
+  num_retain_samples: 500
+  num_eval_samples: 200
+
+unlearning:
+  method: "gradient_ascent"    # gradient_ascent | gradient_difference | npo
+  lr: 1.0e-5
+  epochs: 4
+  batch_size: 4
+  grad_clip: 1.0
+  forget_loss_weight: 1.5
+  retain_loss_weight: 1.0      # used by gradient_difference variant
+
+ewc:
+  enabled: true
+  lambda_init: 1000.0          # base regularization strength
+  fisher_num_samples: 200      # samples used to estimate Fisher Information
+  fisher_batch_size: 4
+  online: true                 # online EWC accumulates Fisher across tasks
+
+auditor:
+  metrics: ["exact_match", "perplexity", "membership_inference"]
+  forget_threshold: 0.3        # target: forget-set exact match should drop below this
+  retain_threshold: 0.85       # target: retain-set accuracy should stay above this
+  eval_batch_size: 8
+
+controller:
+  strategy: "adaptive"         # adaptive | fixed
+  # PID-like controller nudges the unlearning/consolidation trade-off
+  # based on auditor feedback each round
+  plasticity_init: 1.0
+  stability_init: 1.0
+  kp: 0.5                      # proportional gain on forget-set leakage
+  ki: 0.1                      # integral gain
+  max_rounds: 5
+  patience: 2                  # stop early if no improvement for N rounds
+
+logging:
+  output_dir: "./outputs"
+  log_dir: "./outputs/logs"
+  checkpoint_dir: "./outputs/checkpoints"
+  save_every_round: true
+  use_tensorboard: true
