@@ -1,22 +1,5 @@
 """
-End-to-end pipeline, matching the architecture in README.md:
-
-    Input (Forget / Retain / Eval Split)
-            |
-            v
-    Knowledge Auditor        <- baseline audit
-            |
-            v
-    Selective Unlearning      <- gradient ascent on forget set
-    (Gradient Ascent)
-            |
-            v
-    Memory Consolidation      <- EWC regularization
-    (EWC)
-            |
-            v
-    Stability-Plasticity      <- adjusts lambda_ewc from auditor feedback,
-    Controller                   loops back for further rounds if needed
+End-to-end pipeline.
 """
 from __future__ import annotations
 import json
@@ -25,8 +8,6 @@ import time
 
 
 class DictDataset:
-    """Wraps a list[Example] into a torch Dataset of tokenized tensors."""
-
     def __init__(self, examples, tokenizer, max_length):
         self.examples = examples
         self.tokenizer = tokenizer
@@ -62,6 +43,7 @@ class UnlearningPipeline:
         from src.utils.seed import get_device
         from src.auditor.knowledge_auditor import KnowledgeAuditor
         from src.controller.stability_plasticity import StabilityPlasticityController
+        from src.controller.circuit_breaker import IntraRoundCircuitBreaker
         from src.unlearning.gradient_ascent import SelectiveUnlearner
 
         self.cfg = cfg
@@ -78,8 +60,29 @@ class UnlearningPipeline:
             dataset.retain[: cfg.ewc.fisher_num_samples], tokenizer, cfg, cfg.ewc.fisher_batch_size, shuffle=True,
         )
 
+        # Fixed, unshuffled subsets dedicated to the circuit breaker's probes.
+        # Using the same examples every call (rather than sampling from the
+        # shuffled main loaders) removes estimator variance as a source of
+        # missed spikes -- a random 2-batch sample can read "fine" purely by
+        # chance even when the true full-set perplexity has already blown up.
+        breaker_probe_size = 20
+        self.breaker_forget_loader = make_loader(
+            dataset.forget[:breaker_probe_size], tokenizer, cfg, cfg.unlearning.batch_size, shuffle=False,
+        )
+        self.breaker_retain_loader = make_loader(
+            dataset.retain[:breaker_probe_size], tokenizer, cfg, cfg.unlearning.batch_size, shuffle=False,
+        )
+
         self.auditor = KnowledgeAuditor(model, tokenizer, self.device, cfg)
         self.controller = StabilityPlasticityController(cfg)
+
+        breaker_cfg = getattr(cfg, "breaker", None)
+        self.breaker = IntraRoundCircuitBreaker(
+            check_every_n_steps=getattr(breaker_cfg, "check_every_n_steps", 10) if breaker_cfg else 10,
+            spike_multiplier=getattr(breaker_cfg, "spike_multiplier", 2.0) if breaker_cfg else 2.0,
+            emergency_lambda_multiplier=getattr(breaker_cfg, "emergency_lambda_multiplier", 3.0) if breaker_cfg else 3.0,
+        )
+
         self.ewc = None
         self.unlearner = SelectiveUnlearner(model, tokenizer, self.device, cfg, ewc=None)
 
@@ -96,9 +99,10 @@ class UnlearningPipeline:
         self.unlearner.ewc = self.ewc
 
     def run(self) -> dict:
+        from src.controller.circuit_breaker import snapshot_trainable, restore_trainable, quick_perplexity
+
         results = {"rounds": []}
 
-        # 1. Knowledge Auditor: baseline, before any unlearning.
         print("[pipeline] Running baseline audit...")
         baseline_report = self.auditor.audit(
             self.forget_loader, self.retain_loader, self.eval_loader,
@@ -107,8 +111,6 @@ class UnlearningPipeline:
         results["baseline"] = baseline_report
         print(f"[pipeline] Baseline: {baseline_report}")
 
-        # 2. Memory Consolidation (initial EWC fit on retain set) — this
-        #    happens *before* unlearning so we have something to protect.
         if self.cfg.ewc.enabled:
             print("[pipeline] Fitting initial Fisher Information on retain set...")
             self._consolidate()
@@ -118,27 +120,47 @@ class UnlearningPipeline:
             print(f"\n[pipeline] === Round {round_idx + 1}/{max_rounds} "
                   f"(lambda_ewc={self.controller.lambda_ewc:.2f}) ===")
 
-            # 3. Selective Unlearning (gradient ascent on forget set,
-            #    regularized by the current EWC penalty).
+            snapshot = snapshot_trainable(self.model)
+            start_forget_ppl = quick_perplexity(self.model, self.breaker_forget_loader, self.device, max_batches=5)
+            start_retain_ppl = quick_perplexity(self.model, self.breaker_retain_loader, self.device, max_batches=5)
+            self.breaker.start_round(start_forget_ppl, start_retain_ppl)
+            breaker_state = {"tripped": False}
+
+            def on_step(step, _snapshot=snapshot, _state=breaker_state, force=False):
+                if not force and step % self.breaker.check_every_n_steps != 0:
+                    return False
+                cur_forget_ppl = quick_perplexity(self.model, self.breaker_forget_loader, self.device, max_batches=5)
+                cur_retain_ppl = quick_perplexity(self.model, self.breaker_retain_loader, self.device, max_batches=5)
+                if self.breaker.check(step, cur_forget_ppl, cur_retain_ppl):
+                    restore_trainable(self.model, _snapshot)
+                    old_lambda = self.controller.lambda_ewc
+                    self.controller.lambda_ewc = min(
+                        self.breaker.emergency_lambda(old_lambda),
+                        getattr(self.cfg.ewc, "lambda_max", 1e5),
+                    )
+                    _state["tripped"] = True
+                    print(f"[pipeline] CIRCUIT BREAKER tripped at step {step}: "
+                          f"forget_ppl={cur_forget_ppl:.2f} (start={start_forget_ppl:.2f}), "
+                          f"retain_ppl={cur_retain_ppl:.2f} (start={start_retain_ppl:.2f}) "
+                          f"-> reverted weights, lambda_ewc {old_lambda:.2f} -> {self.controller.lambda_ewc:.2f}")
+                    return True
+                return False
+
             history = self.unlearner.run_round(
                 self.forget_loader, self.retain_loader,
                 ewc_lambda=self.controller.lambda_ewc if self.cfg.ewc.enabled else 0.0,
+                on_step=on_step,
             )
 
-            # 4. Memory Consolidation refresh (Online EWC accumulates
-            #    Fisher information after each round of change).
             if self.cfg.ewc.enabled:
                 self._consolidate()
 
-            # Re-audit to see the effect of this round.
             report = self.auditor.audit(
                 self.forget_loader, self.retain_loader, self.eval_loader,
                 raw_forget_examples=self.dataset.forget,
             )
             print(f"[pipeline] Round {round_idx + 1} audit: {report}")
 
-            # 5. Stability-Plasticity Controller: adjust lambda_ewc for
-            #    next round based on the auditor's feedback.
             control = self.controller.step(report, baseline=baseline_report)
             print(f"[pipeline] Controller: {control}")
 
@@ -147,6 +169,7 @@ class UnlearningPipeline:
                 "train_history": history,
                 "audit": report,
                 "control": control,
+                "breaker_tripped": breaker_state["tripped"],
             })
 
             if self.cfg.logging.save_every_round:

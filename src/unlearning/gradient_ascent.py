@@ -1,15 +1,9 @@
 """
 Selective unlearning via gradient ascent on the forget set, regularized
-by an EWC penalty (memory consolidation) so retained knowledge is
-protected while forget-set knowledge is actively erased.
-
-Supported methods:
-  - "gradient_ascent": maximize forget-set loss (i.e. minimize -loss)
-  - "gradient_difference": maximize forget-set loss while simultaneously
-    minimizing retain-set loss in the same step (Liu et al., 2022 style)
-  - "npo": Negative Preference Optimization — a bounded alternative to
-    plain gradient ascent that avoids the unboundedness/divergence that
-    vanilla GA can suffer from (Zhang et al., 2024)
+by an EWC penalty, with an on_step hook for intra-round abort. Also
+forces one extra check at the very end of the round (force=True) so
+degradation completing in the last few steps between regular checks
+cannot slip through unnoticed.
 """
 from __future__ import annotations
 
@@ -28,7 +22,7 @@ class SelectiveUnlearner:
         self.tokenizer = tokenizer
         self.device = device
         self.cfg = cfg
-        self.ewc = ewc  # src.consolidation.ewc.EWC instance, or None
+        self.ewc = ewc
         self.method = cfg.unlearning.method
         self.forget_weight = cfg.unlearning.forget_loss_weight
         self.retain_weight = cfg.unlearning.retain_loss_weight
@@ -40,20 +34,12 @@ class SelectiveUnlearner:
 
         if self.method == "gradient_ascent":
             task_loss = -self.forget_weight * forget_loss
-
         elif self.method == "gradient_difference":
             retain_loss = _lm_loss(self.model, retain_batch, self.device) if retain_batch else torch.tensor(0.0, device=self.device)
             task_loss = -self.forget_weight * forget_loss + self.retain_weight * retain_loss
-
         elif self.method == "npo":
-            # NPO: bounded negative-preference loss, beta controls steepness.
             beta = 0.1
             task_loss = (2.0 / beta) * torch.nn.functional.softplus(beta * forget_loss)
-            # NPO's objective already grows as forget_loss shrinks below the
-            # reference; here we approximate with softplus of the loss itself
-            # since we don't retain a frozen reference-model pass in this
-            # lightweight implementation. Swap in a true reference-model
-            # log-ratio for the full NPO formulation.
         else:
             raise ValueError(f"Unknown unlearning method: {self.method}")
 
@@ -68,8 +54,8 @@ class SelectiveUnlearner:
             "ewc_loss": float(ewc_loss.item() if hasattr(ewc_loss, "item") else ewc_loss),
         }
 
-    def run_round(self, forget_loader, retain_loader, ewc_lambda: float, epochs: int | None = None):
-        """Run one round of unlearning (a handful of epochs over the forget set)."""
+    def run_round(self, forget_loader, retain_loader, ewc_lambda: float,
+                   epochs: int | None = None, on_step=None):
         import torch
         import itertools
 
@@ -81,9 +67,13 @@ class SelectiveUnlearner:
 
         retain_iter = itertools.cycle(retain_loader) if retain_loader is not None else None
         history = []
+        global_step = 0
+        aborted = False
 
         self.model.train()
         for epoch in range(epochs):
+            if aborted:
+                break
             for forget_batch in forget_loader:
                 retain_batch = next(retain_iter) if retain_iter else None
                 optimizer.zero_grad()
@@ -94,8 +84,26 @@ class SelectiveUnlearner:
                     self.cfg.unlearning.grad_clip,
                 )
                 optimizer.step()
+                global_step += 1
                 metrics["epoch"] = epoch
+                metrics["global_step"] = global_step
                 history.append(metrics)
+
+                if on_step is not None and on_step(global_step):
+                    metrics["aborted"] = True
+                    aborted = True
+                    break
+
+        # Force one final check at the true end of the round, regardless of
+        # check_every_n_steps alignment -- this is what catches degradation
+        # that completed in the last few steps between regular checkpoints
+        # (previously this could slip through and get permanently baked in
+        # by the next EWC/Fisher consolidation step).
+        if on_step is not None and not aborted and global_step > 0:
+            if on_step(global_step, force=True):
+                if history:
+                    history[-1]["aborted"] = True
+                aborted = True
 
         self.model.eval()
         return history
