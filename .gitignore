@@ -17,3 +17,8 @@ outputs/checkpoints/
 *.safetensors
 *.bin
 data_cache/
+
+outputs/checkpoints/
+*.safetensors
+*.bin
+data_cache/
