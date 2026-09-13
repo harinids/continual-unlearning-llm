@@ -9,7 +9,7 @@ auditor:
 breaker:
   check_every_n_steps: 25
   emergency_lambda_multiplier: 1.5
-  spike_multiplier: 3.0
+  spike_multiplier: 5.0
 controller:
   kd: 0.5
   ki: 0.1
