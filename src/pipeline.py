@@ -162,7 +162,8 @@ class UnlearningPipeline:
             print(f"[pipeline] Round {round_idx + 1} audit: {report}")
 
             control = self.controller.step(report, baseline=baseline_report)
-            print(f"[pipeline] Controller: {control}")
+            self.controller.decay_if_stable(breaker_state["tripped"])
+            print(f"[pipeline] Controller: {control} (lambda after decay check: {self.controller.lambda_ewc:.2f})")
 
             results["rounds"].append({
                 "round": round_idx + 1,

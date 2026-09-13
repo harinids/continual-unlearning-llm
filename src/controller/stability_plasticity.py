@@ -82,5 +82,31 @@ class StabilityPlasticityController:
         self.history.append(record)
         return record
 
+    def decay_if_stable(self, breaker_tripped: bool, decay_factor: float = 0.7,
+                         stable_rounds_needed: int = 2):
+        """
+        If the circuit breaker hasn't tripped for `stable_rounds_needed`
+        consecutive rounds, ease lambda_ewc back down. Without this, lambda
+        only ever escalates (every trip multiplies it up, nothing brings it
+        back down), so once a rough patch pushes lambda to lambda_max the
+        controller stays pinned there permanently -- plasticity never
+        recovers even after the model has clearly stabilized, which is
+        exactly what produced zero net forgetting across all 12 rounds of
+        the Qwen2.5 stress test (every round tripped, so this never
+        triggered there -- this addresses the case where trips eventually
+        stop but lambda never comes back down to let unlearning resume).
+        """
+        if not hasattr(self, "_stable_round_count"):
+            self._stable_round_count = 0
+
+        if breaker_tripped:
+            self._stable_round_count = 0
+        else:
+            self._stable_round_count += 1
+
+        if self._stable_round_count >= stable_rounds_needed:
+            self.lambda_ewc = max(self.cfg.ewc.lambda_init * 0.1, self.lambda_ewc * decay_factor)
+            self._stable_round_count = 0  # reset so decay is gradual, not immediate re-decay next round
+
     def should_stop(self) -> bool:
         return self._rounds_no_improve >= self.cfg.controller.patience
