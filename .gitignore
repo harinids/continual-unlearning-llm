@@ -7,3 +7,8 @@ data_cache/
 .venv/
 venv/
 .DS_Store
+
+outputs/checkpoints/
+*.safetensors
+*.bin
+data_cache/
