@@ -19,6 +19,8 @@ controller:
   plasticity_init: 1.0
   stability_init: 1.0
   strategy: adaptive
+  hard_drift_threshold: 3.0
+  hard_stop_action: abort
 dataset:
   cache_dir: ./data_cache
   eval_split: holdout

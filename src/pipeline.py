@@ -162,7 +162,8 @@ class UnlearningPipeline:
             print(f"[pipeline] Round {round_idx + 1} audit: {report}")
 
             control = self.controller.step(report, baseline=baseline_report)
-            self.controller.decay_if_stable(breaker_state["tripped"])
+            self.controller.decay_if_stable(breaker_state["tripped"], report=report, baseline=baseline_report)
+            self.controller.check_hard_stop(report, baseline_report)
             print(f"[pipeline] Controller: {control} (lambda after decay check: {self.controller.lambda_ewc:.2f})")
 
             results["rounds"].append({
@@ -177,7 +178,10 @@ class UnlearningPipeline:
                 self._save_checkpoint(round_idx + 1)
 
             if self.controller.should_stop():
-                print("[pipeline] Controller signaled convergence (no improvement). Stopping early.")
+                if getattr(self.controller, "_hard_stop_triggered", False):
+                    print(f"[pipeline] HARD STOP: {self.controller._hard_stop_reason}")
+                else:
+                    print("[pipeline] Controller signaled convergence (no improvement). Stopping early.")
                 break
 
         results["final_audit"] = results["rounds"][-1]["audit"] if results["rounds"] else baseline_report
