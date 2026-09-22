@@ -58,8 +58,8 @@ class SequentialUnlearningPipeline:
                 p.breaker.start_round(start_forget_ppl, start_retain_ppl)
                 breaker_state = {"tripped": False}
 
-                def on_step(step, _snapshot=snapshot, _state=breaker_state):
-                    if step % p.breaker.check_every_n_steps != 0:
+                def on_step(step, _snapshot=snapshot, _state=breaker_state, force=False):
+                    if not force and step % p.breaker.check_every_n_steps != 0:
                         return False
                     cur_forget_ppl = quick_perplexity(p.model, req_forget_loader, p.device, max_batches=2)
                     cur_retain_ppl = quick_perplexity(p.model, p.retain_loader, p.device, max_batches=2)
