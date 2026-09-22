@@ -84,7 +84,11 @@ class UnlearningPipeline:
         )
 
         self.ewc = None
-        self.unlearner = SelectiveUnlearner(model, tokenizer, self.device, cfg, ewc=None)
+        if getattr(cfg.unlearning, "method", None) == "geometry_aware":
+            from src.unlearning.geometry_aware import GeometryAwareUnlearner
+            self.unlearner = GeometryAwareUnlearner(model, tokenizer, self.device, cfg, ewc=None)
+        else:
+            self.unlearner = SelectiveUnlearner(model, tokenizer, self.device, cfg, ewc=None)
 
         os.makedirs(cfg.logging.output_dir, exist_ok=True)
         os.makedirs(cfg.logging.checkpoint_dir, exist_ok=True)
