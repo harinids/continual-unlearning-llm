@@ -29,6 +29,13 @@ class GeometryAwareUnlearner(SelectiveUnlearner):
         self.subspace_dim = getattr(geo_cfg, "subspace_dim", 10) if geo_cfg else 10
         self.subspace_samples = getattr(geo_cfg, "subspace_samples", 16) if geo_cfg else 16
         self.keep_ewc = getattr(geo_cfg, "keep_ewc", True) if geo_cfg else True
+        # self.method was set to cfg.unlearning.method = "geometry_aware" by
+        # super().__init__() -- but _step_loss() (inherited, unmodified)
+        # only recognizes gradient_ascent/gradient_difference/npo as the
+        # underlying task-loss type. Geometry projection is applied ON TOP
+        # of one of those losses, not instead of it, so override with the
+        # actual base method (configurable, defaults to gradient_ascent).
+        self.method = getattr(geo_cfg, "base_method", "gradient_ascent") if geo_cfg else "gradient_ascent"
         self.estimator = RetainSubspaceEstimator(cfg, self.subspace_dim, self.subspace_samples)
 
     def run_round(self, forget_loader, retain_loader, ewc_lambda: float,
