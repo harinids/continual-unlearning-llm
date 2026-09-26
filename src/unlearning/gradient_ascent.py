@@ -39,7 +39,10 @@ class SelectiveUnlearner:
             task_loss = -self.forget_weight * forget_loss + self.retain_weight * retain_loss
         elif self.method == "npo":
             beta = 0.1
-            task_loss = (2.0 / beta) * torch.nn.functional.softplus(beta * forget_loss)
+            ref_loss = None
+            with torch.no_grad(), self.model.disable_adapter():
+                ref_loss = _lm_loss(self.model, forget_batch, self.device)
+            task_loss = (2.0 / beta) * torch.nn.functional.softplus(beta * (ref_loss - forget_loss))
         else:
             raise ValueError(f"Unknown unlearning method: {self.method}")
 
@@ -48,11 +51,15 @@ class SelectiveUnlearner:
             ewc_loss = ewc_lambda * self.ewc.penalty(self.model)
 
         total = task_loss + ewc_loss
-        return total, {
+        metrics_out = {
             "forget_loss": forget_loss.item(),
             "task_loss": task_loss.item(),
             "ewc_loss": float(ewc_loss.item() if hasattr(ewc_loss, "item") else ewc_loss),
         }
+        if self.method == "npo":
+            metrics_out["ref_loss"] = ref_loss.item()
+            metrics_out["gap"] = ref_loss.item() - forget_loss.item()
+        return total, metrics_out
 
     def run_round(self, forget_loader, retain_loader, ewc_lambda: float,
                    epochs: int | None = None, on_step=None):
