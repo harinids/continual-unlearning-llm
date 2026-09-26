@@ -8,12 +8,11 @@ import time
 
 
 class SequentialUnlearningPipeline:
-    def __init__(self, cfg, model, tokenizer, dataset, scheduler, enable_safety: bool = True):
+    def __init__(self, cfg, model, tokenizer, dataset, scheduler):
         from src.pipeline import UnlearningPipeline
         self.cfg = cfg
         self.scheduler = scheduler
         self.dataset = dataset
-        self.enable_safety = enable_safety  # False = plain GA control run, no breaker/PID/decay/hard-stop
         self.pipeline = UnlearningPipeline(cfg, model, tokenizer, dataset)
         self.persistence_matrix: dict = {}
         self.request_results: list = []
@@ -53,55 +52,50 @@ class SequentialUnlearningPipeline:
                 print(f"[sequential]   -- round {round_idx + 1}/{max_rounds} "
                       f"(lambda_ewc={p.controller.lambda_ewc:.2f}) --")
 
+                snapshot = snapshot_trainable(p.model)
+                start_forget_ppl = quick_perplexity(p.model, req_forget_loader, p.device)
+                start_retain_ppl = quick_perplexity(p.model, p.retain_loader, p.device)
+                p.breaker.start_round(start_forget_ppl, start_retain_ppl)
                 breaker_state = {"tripped": False}
 
-                if self.enable_safety:
-                    snapshot = snapshot_trainable(p.model)
-                    start_forget_ppl = quick_perplexity(p.model, req_forget_loader, p.device)
-                    start_retain_ppl = quick_perplexity(p.model, p.retain_loader, p.device)
-                    p.breaker.start_round(start_forget_ppl, start_retain_ppl)
-
-                    def on_step(step, _snapshot=snapshot, _state=breaker_state, force=False):
-                        if not force and step % p.breaker.check_every_n_steps != 0:
-                            return False
-                        cur_forget_ppl = quick_perplexity(p.model, req_forget_loader, p.device, max_batches=2)
-                        cur_retain_ppl = quick_perplexity(p.model, p.retain_loader, p.device, max_batches=2)
-                        if p.breaker.check(step, cur_forget_ppl, cur_retain_ppl):
-                            restore_trainable(p.model, _snapshot)
-                            old_lambda = p.controller.lambda_ewc
-                            p.controller.lambda_ewc = min(
-                                p.breaker.emergency_lambda(old_lambda),
-                                getattr(self.cfg.ewc, "lambda_max", 1e5),
-                            )
-                            _state["tripped"] = True
-                            print(f"[sequential]   CIRCUIT BREAKER tripped at step {step}")
-                            return True
+                def on_step(step, _snapshot=snapshot, _state=breaker_state):
+                    if step % p.breaker.check_every_n_steps != 0:
                         return False
-                else:
-                    on_step = None
+                    cur_forget_ppl = quick_perplexity(p.model, req_forget_loader, p.device, max_batches=2)
+                    cur_retain_ppl = quick_perplexity(p.model, p.retain_loader, p.device, max_batches=2)
+                    if p.breaker.check(step, cur_forget_ppl, cur_retain_ppl):
+                        restore_trainable(p.model, _snapshot)
+                        old_lambda = p.controller.lambda_ewc
+                        p.controller.lambda_ewc = min(
+                            p.breaker.emergency_lambda(old_lambda),
+                            getattr(self.cfg.ewc, "lambda_max", 1e5),
+                        )
+                        _state["tripped"] = True
+                        print(f"[sequential]   CIRCUIT BREAKER tripped at step {step}")
+                        return True
+                    return False
 
                 p.unlearner.run_round(
                     req_forget_loader, p.retain_loader,
-                    ewc_lambda=(p.controller.lambda_ewc if (self.enable_safety and self.cfg.ewc.enabled) else 0.0),
+                    ewc_lambda=p.controller.lambda_ewc if self.cfg.ewc.enabled else 0.0,
                     on_step=on_step,
                 )
 
-                if self.enable_safety and self.cfg.ewc.enabled:
+                if self.cfg.ewc.enabled:
                     p._consolidate()
 
                 report = p.auditor.audit(
                     req_forget_loader, p.retain_loader, p.eval_loader,
                     raw_forget_examples=req.examples,
                 )
+                p.controller.step(report, baseline=req_baseline)
+                p.controller.decay_if_stable(breaker_state["tripped"], report=report, baseline=req_baseline)
+                if p.controller.check_hard_stop(report, req_baseline):
+                    print(f"[sequential]   HARD STOP: {p.controller._hard_stop_reason}")
 
-                if self.enable_safety:
-                    p.controller.step(report, baseline=req_baseline)
-                    p.controller.decay_if_stable(breaker_state["tripped"], report=report, baseline=req_baseline)
-                    if p.controller.check_hard_stop(report, req_baseline):
-                        print(f"[sequential]   HARD STOP: {p.controller._hard_stop_reason}")
-                    if p.controller.should_stop():
-                        print("[sequential]   Converged for this request. Moving to next.")
-                        break
+                if p.controller.should_stop():
+                    print("[sequential]   Converged for this request. Moving to next.")
+                    break
 
             print(f"[sequential]   Request {req.request_id} final: {report}")
 
