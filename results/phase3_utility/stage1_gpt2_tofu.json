@@ -1,0 +1,6 @@
+{
+  "tag": "stage1_gpt2_tofu",
+  "wikitext2_ppl_before": 35.48441611861077,
+  "wikitext2_ppl_after": 66.42790461168327,
+  "rel_change_pct": 87.20303693215725
+}
