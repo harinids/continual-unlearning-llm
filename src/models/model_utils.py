@@ -19,6 +19,13 @@ def load_model_and_tokenizer(cfg):
 
     model = AutoModelForCausalLM.from_pretrained(model_name)
 
+    # Optional stage-1 fine-tune (e.g. on TOFU): merge the saved LoRA into the base
+    # weights so the unlearning LoRA below sits on top of a model that knows the data.
+    stage1 = getattr(cfg.model, "stage1_adapter", None)
+    if stage1:
+        from peft import PeftModel
+        model = PeftModel.from_pretrained(model, stage1).merge_and_unload()
+
     if cfg.model.use_lora:
         from peft import LoraConfig, get_peft_model, TaskType
 
