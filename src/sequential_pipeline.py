@@ -1,16 +1,5 @@
 """
 Sequential/continual unlearning orchestrator for Phase 1.
-
-Reuses the existing UnlearningPipeline's breaker + PID + decay + hard-stop
-completely unchanged -- just runs the per-round loop once per
-ForgetRequest instead of once over the whole dataset. Fisher/EWC state
-(self.ewc) is NOT reset between requests; it keeps accumulating, so the
-"consolidated safe region" reflects everything retained so far.
-
-After each request's rounds finish, re-audits every forget set seen so
-far (this request's + all earlier ones) into persistence_matrix[t][i],
-so you can see whether request t's unlearning damaged the forgetting
-already achieved for request i < t.
 """
 from __future__ import annotations
 import json
@@ -44,7 +33,7 @@ class SequentialUnlearningPipeline:
         print(f"[sequential] Overall baseline (full forget10 pool): {overall_baseline}")
 
         if self.cfg.ewc.enabled:
-            p._consolidate()  # initial Fisher fit, same as Phase 0's run()
+            p._consolidate()
 
         seen_requests = []
 
@@ -57,7 +46,7 @@ class SequentialUnlearningPipeline:
                 raw_forget_examples=req.examples,
             )
 
-            report = req_baseline  # in case max_rounds == 0, never happens but keeps `report` bound
+            report = req_baseline
             max_rounds = self.cfg.controller.max_rounds
             for round_idx in range(max_rounds):
                 print(f"[sequential]   -- round {round_idx + 1}/{max_rounds} "
@@ -69,8 +58,8 @@ class SequentialUnlearningPipeline:
                 p.breaker.start_round(start_forget_ppl, start_retain_ppl)
                 breaker_state = {"tripped": False}
 
-                def on_step(step, _snapshot=snapshot, _state=breaker_state):
-                    if step % p.breaker.check_every_n_steps != 0:
+                def on_step(step, _snapshot=snapshot, _state=breaker_state, force=False):
+                    if not force and step % p.breaker.check_every_n_steps != 0:
                         return False
                     cur_forget_ppl = quick_perplexity(p.model, req_forget_loader, p.device, max_batches=2)
                     cur_retain_ppl = quick_perplexity(p.model, p.retain_loader, p.device, max_batches=2)
@@ -136,8 +125,6 @@ class SequentialUnlearningPipeline:
         }
 
     def _save_intermediate(self):
-        # Saved straight into results/ (not gitignored) this time -- learned
-        # from Phase 0's outputs/-only archive never making it to git.
         os.makedirs("results/phase1_sequential", exist_ok=True)
         path = f"results/phase1_sequential/persistence_{int(time.time())}.json"
         with open(path, "w") as f:
