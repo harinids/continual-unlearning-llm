@@ -1,0 +1,29 @@
+{
+  "before": {
+    "forget": 30.00850686478451,
+    "retain": 32.144586192224125,
+    "holdout": 41.23777944112565
+  },
+  "after": {
+    "forget": 7.8809060088352565,
+    "retain": 7.617014270301178,
+    "holdout": 21.24641899516988
+  },
+  "wikitext2": {
+    "tag": "stage1_gpt2_tofu_v2",
+    "wikitext2_ppl_before": 35.48441611861077,
+    "wikitext2_ppl_after": 51.36884130584739,
+    "rel_change_pct": 44.76451052242509
+  },
+  "r": 64,
+  "alpha": 128,
+  "lr": 0.0001,
+  "epochs": 3,
+  "bs": 16,
+  "seed": 0,
+  "targets": [
+    "c_attn",
+    "c_proj",
+    "c_fc"
+  ]
+}
