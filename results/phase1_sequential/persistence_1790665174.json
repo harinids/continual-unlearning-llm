@@ -1,13 +1,4 @@
 {
-  "overall_baseline": {
-    "forget_ppl": 8.00793984719891,
-    "retain_ppl": 7.759119674972981,
-    "eval_ppl": 21.170204706356266,
-    "forget_exact_match": 0.275,
-    "mia_gap": 0.9859152995623073,
-    "forget_ok": true,
-    "retain_ok": null
-  },
   "request_results": [
     {
       "request_id": 0,
