@@ -1,0 +1,39 @@
+{
+  "request_results": [
+    {
+      "request_id": 0,
+      "num_examples": 25,
+      "baseline": {
+        "forget_ppl": 7.171109365443365,
+        "retain_ppl": 7.760452181518218,
+        "eval_ppl": 21.170204706356266,
+        "forget_exact_match": 0.2,
+        "mia_gap": 1.0473623852153398,
+        "forget_ok": true,
+        "retain_ok": null
+      },
+      "final": {
+        "forget_ppl": 7.330039432866446,
+        "retain_ppl": 7.754918705079046,
+        "eval_ppl": 21.10526599050602,
+        "forget_exact_match": 0.2,
+        "mia_gap": 1.034869203200707,
+        "forget_ok": true,
+        "retain_ok": null
+      }
+    }
+  ],
+  "persistence_matrix": {
+    "0": {
+      "0": {
+        "forget_ppl": 7.3293414876518845,
+        "retain_ppl": 7.754467606931502,
+        "eval_ppl": 21.10526599050602,
+        "forget_exact_match": 0.2,
+        "mia_gap": 1.0950176466952313,
+        "forget_ok": true,
+        "retain_ok": null
+      }
+    }
+  }
+}
