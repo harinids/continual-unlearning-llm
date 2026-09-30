@@ -8,7 +8,7 @@ def _wikitext_ids(tokenizer):
     from datasets import load_dataset
     key = tokenizer.name_or_path
     if key not in _wt_cache:
-        ds = load_dataset("wikitext", "wikitext-2-raw-v1", split="test")
+        ds = load_dataset("Salesforce/wikitext", "wikitext-2-raw-v1", split="test")
         _wt_cache[key] = tokenizer("\n\n".join(ds["text"]), return_tensors="pt").input_ids[0]
     return _wt_cache[key]
 
