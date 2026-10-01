@@ -170,6 +170,12 @@ class StabilityPlasticityController:
             return True
         return False
 
+    def reset_request_state(self):
+        self._best_score = float("-inf")
+        self._rounds_no_improve = 0
+        self._hard_stop_triggered = False
+        self._hard_stop_reason = None
+
     def should_stop(self) -> bool:
         if self._hard_stop_triggered and self.hard_stop_action == "abort":
             return True

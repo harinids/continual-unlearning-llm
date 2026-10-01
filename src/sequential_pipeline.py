@@ -46,6 +46,8 @@ class SequentialUnlearningPipeline:
                 raw_forget_examples=req.examples,
             )
 
+            if getattr(self.cfg.controller, "reset_per_request", True):
+                p.controller.reset_request_state()
             report = req_baseline
             max_rounds = self.cfg.controller.max_rounds
             for round_idx in range(max_rounds):
