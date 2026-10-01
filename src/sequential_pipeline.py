@@ -118,7 +118,17 @@ class SequentialUnlearningPipeline:
             })
             self._save_intermediate()
 
+            if getattr(self.cfg.controller, "cumulative_stop", True):
+                thr = self.cfg.controller.hard_drift_threshold
+                rd = report["retain_ppl"] / overall_baseline["retain_ppl"]
+                ed = report["eval_ppl"] / overall_baseline["eval_ppl"]
+                if rd > thr or ed > thr:
+                    print(f"[sequential]   CUMULATIVE STOP at request {req.request_id}: retain {rd:.2f}x, eval {ed:.2f}x vs original baseline")
+                    self.aborted_at = req.request_id
+                    break
+
         return {
+            "aborted_at": getattr(self, "aborted_at", None),
             "overall_baseline": overall_baseline,
             "request_results": self.request_results,
             "persistence_matrix": self.persistence_matrix,
