@@ -1,0 +1,83 @@
+{
+  "overall_baseline": {
+    "forget_ppl": 8.007564652436795,
+    "retain_ppl": 7.76013615664777,
+    "eval_ppl": 21.170204706356266,
+    "forget_exact_match": 0.275
+  },
+  "request_results": [
+    {
+      "request_id": 0,
+      "final": {
+        "forget_ppl": 7.585666365917265,
+        "retain_ppl": 7.7479007296305635,
+        "eval_ppl": 21.043036965724458
+      }
+    },
+    {
+      "request_id": 1,
+      "final": {
+        "forget_ppl": 7.908920132578105,
+        "retain_ppl": 7.74663713225666,
+        "eval_ppl": 20.95945419879481
+      }
+    },
+    {
+      "request_id": 2,
+      "final": {
+        "forget_ppl": 10.135368077656898,
+        "retain_ppl": 8.011459599963858,
+        "eval_ppl": 21.603600692928254
+      }
+    },
+    {
+      "request_id": 3,
+      "final": {
+        "forget_ppl": 11.015577962180046,
+        "retain_ppl": 8.336124230459045,
+        "eval_ppl": 22.42799130097259
+      }
+    },
+    {
+      "request_id": 4,
+      "final": {
+        "forget_ppl": 12.673741368175712,
+        "retain_ppl": 8.918373036676462,
+        "eval_ppl": 23.704938031054372
+      }
+    },
+    {
+      "request_id": 5,
+      "final": {
+        "forget_ppl": 14.044932819245743,
+        "retain_ppl": 10.093510970513316,
+        "eval_ppl": 25.984814432775043
+      }
+    },
+    {
+      "request_id": 6,
+      "final": {
+        "forget_ppl": 17.899309415866394,
+        "retain_ppl": 11.858493127795363,
+        "eval_ppl": 29.388938706410823
+      }
+    },
+    {
+      "request_id": 7,
+      "final": {
+        "forget_ppl": 20.143078387586105,
+        "retain_ppl": 14.71496582258174,
+        "eval_ppl": 34.81068890424103
+      }
+    }
+  ],
+  "config": {
+    "method": "gradient_ascent",
+    "lr_multiplier": 1.75,
+    "lr": 1.75e-05,
+    "seed": 42,
+    "patience": 5,
+    "stage1": "results/stage1/gpt2_tofu_v2"
+  },
+  "note": "Reconstructed from printed training output after Colab runtime reset destroyed local files before commit; adapter weights not recoverable, metrics only."
+}
