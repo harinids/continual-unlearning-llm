@@ -1,0 +1,81 @@
+{
+  "request_results": [
+    {
+      "request_id": 0,
+      "num_examples": 25,
+      "baseline": {
+        "forget_ppl": 7.582014479705665,
+        "retain_ppl": 7.75957207596343,
+        "eval_ppl": 21.170204706356266,
+        "forget_exact_match": 0.36,
+        "mia_gap": 1.0300578285049604,
+        "forget_ok": false,
+        "retain_ok": null
+      },
+      "final": {
+        "forget_ppl": 7.72543159739924,
+        "retain_ppl": 7.7575633522040075,
+        "eval_ppl": 21.175895781822174,
+        "forget_exact_match": 0.36,
+        "mia_gap": 1.1670798796873827,
+        "forget_ok": false,
+        "retain_ok": null
+      }
+    },
+    {
+      "request_id": 1,
+      "num_examples": 25,
+      "baseline": {
+        "forget_ppl": 8.363170925895005,
+        "retain_ppl": 7.758041190965995,
+        "eval_ppl": 21.175895781822174,
+        "forget_exact_match": 0.08,
+        "mia_gap": 0.9467141850964054,
+        "forget_ok": true,
+        "retain_ok": null
+      },
+      "final": {
+        "forget_ppl": 8.642665255313705,
+        "retain_ppl": 7.762582557998965,
+        "eval_ppl": 21.16036280419006,
+        "forget_exact_match": 0.08,
+        "mia_gap": 0.9310434087292179,
+        "forget_ok": true,
+        "retain_ok": null
+      }
+    }
+  ],
+  "persistence_matrix": {
+    "0": {
+      "0": {
+        "forget_ppl": 7.7238403944278184,
+        "retain_ppl": 7.758175019759906,
+        "eval_ppl": 21.175895781822174,
+        "forget_exact_match": 0.36,
+        "mia_gap": 1.1220609172359928,
+        "forget_ok": false,
+        "retain_ok": null
+      }
+    },
+    "1": {
+      "0": {
+        "forget_ppl": 7.839823031468214,
+        "retain_ppl": 7.762503508998996,
+        "eval_ppl": 21.16036280419006,
+        "forget_exact_match": 0.36,
+        "mia_gap": 1.020082887712416,
+        "forget_ok": false,
+        "retain_ok": null
+      },
+      "1": {
+        "forget_ppl": 8.644515035601195,
+        "retain_ppl": 7.762184465249133,
+        "eval_ppl": 21.16036280419006,
+        "forget_exact_match": 0.08,
+        "mia_gap": 0.8760097590121596,
+        "forget_ok": true,
+        "retain_ok": null
+      }
+    }
+  }
+}
