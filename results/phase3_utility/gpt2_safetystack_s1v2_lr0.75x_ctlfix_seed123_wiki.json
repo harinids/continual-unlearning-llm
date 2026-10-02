@@ -1,6 +1,6 @@
 {
   "tag": "gpt2_safetystack_s1v2_lr0.75x_ctlfix_seed123_wiki",
   "wikitext2_ppl_before": 51.368842703042276,
-  "wikitext2_ppl_after": 111.93232474755396,
-  "rel_change_pct": 117.89925343388137
+  "wikitext2_ppl_after": 116.41653699144442,
+  "rel_change_pct": 126.62869331987064
 }
