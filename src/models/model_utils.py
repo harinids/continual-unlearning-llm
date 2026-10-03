@@ -17,7 +17,7 @@ def load_model_and_tokenizer(cfg):
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    model = AutoModelForCausalLM.from_pretrained(model_name)
+    model = AutoModelForCausalLM.from_pretrained(model_name).float()  # T4: no bf16
 
     # Optional stage-1 fine-tune (e.g. on TOFU): merge the saved LoRA into the base
     # weights so the unlearning LoRA below sits on top of a model that knows the data.
