@@ -1,0 +1,6 @@
+{
+  "tag": "qwen_safetystack_s1v1_lr2e-06_ctlfix_seed42_wiki",
+  "wikitext2_ppl_before": 23.168673261719935,
+  "wikitext2_ppl_after": 22.821265173922544,
+  "rel_change_pct": -1.4994733788722847
+}
