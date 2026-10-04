@@ -93,3 +93,13 @@ trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 [sequential]   persistence[6][2]: forget_ppl=57.36, forget_exact_match=0.0
 [sequential]   persistence[6][3]: forget_ppl=68.02, forget_exact_match=0.0
 [sequential]   persistence[6][4]: forget_ppl=80.63, forget_exact_match=0.0
+[sequential]   persistence[6][5]: forget_ppl=56.23, forget_exact_match=0.0
+[sequential]   persistence[6][6]: forget_ppl=81.02, forget_exact_match=0.0
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791143087.json
+[sequential]   CUMULATIVE STOP at request 6: retain 8.70x, eval 1.85x vs original baseline
+[qwen_safetystack_s1v1_lr6e-06_ctlfix_seed42_wiki] run done in 140.8 min
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 4358/4358 [00:00<00:00, 54946.00 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 36718/36718 [00:00<00:00, 594089.65 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 3760/3760 [00:00<00:00, 528876.99 examples/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+{'tag': 'qwen_safetystack_s1v1_lr6e-06_ctlfix_seed42_wiki', 'wikitext2_ppl_before': 23.168673261719935, 'wikitext2_ppl_after': 32.4403530924556, 'rel_change_pct': 40.01817335848337}
