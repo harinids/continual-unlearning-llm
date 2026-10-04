@@ -103,3 +103,19 @@ trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 [sequential]   -- round 3/5 (lambda_ewc=63.88) --
 [sequential]   -- round 4/5 (lambda_ewc=100.00) --
 [sequential]   -- round 5/5 (lambda_ewc=68.32) --
+[sequential]   Request 7 final: {'forget_ppl': 4.828848543935854, 'retain_ppl': 4.235506446506733, 'eval_ppl': 11.672398939288243, 'forget_exact_match': 0.28, 'mia_gap': 0.883923765067216, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[7][0]: forget_ppl=5.34, forget_exact_match=0.28
+[sequential]   persistence[7][1]: forget_ppl=5.22, forget_exact_match=0.24
+[sequential]   persistence[7][2]: forget_ppl=5.61, forget_exact_match=0.12
+[sequential]   persistence[7][3]: forget_ppl=5.65, forget_exact_match=0.24
+[sequential]   persistence[7][4]: forget_ppl=5.73, forget_exact_match=0.36
+[sequential]   persistence[7][5]: forget_ppl=5.11, forget_exact_match=0.36
+[sequential]   persistence[7][6]: forget_ppl=5.61, forget_exact_match=0.36
+[sequential]   persistence[7][7]: forget_ppl=4.83, forget_exact_match=0.28
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791126265.json
+[qwen_safetystack_s1v1_lr4e-06_ctlfix_seed42_wiki] run done in 150.1 min
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 4358/4358 [00:00<00:00, 51444.44 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 36718/36718 [00:00<00:00, 572429.58 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 3760/3760 [00:00<00:00, 461654.61 examples/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+{'tag': 'qwen_safetystack_s1v1_lr4e-06_ctlfix_seed42_wiki', 'wikitext2_ppl_before': 23.168673261719935, 'wikitext2_ppl_after': 23.99391069902944, 'rel_change_pct': 3.5618674750486745}
