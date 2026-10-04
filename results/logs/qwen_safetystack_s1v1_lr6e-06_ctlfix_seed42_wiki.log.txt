@@ -13,3 +13,19 @@ trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 [sequential]   -- round 4/5 (lambda_ewc=562.99) --
 [sequential]   -- round 5/5 (lambda_ewc=358.65) --
 [sequential]   Request 0 final: {'forget_ppl': 3.6100174565570304, 'retain_ppl': 3.3798620975968956, 'eval_ppl': 12.185821643512767, 'forget_exact_match': 0.4, 'mia_gap': 1.1509594223001502, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[0][0]: forget_ppl=3.61, forget_exact_match=0.4
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791135850.json
+
+[sequential] ===== Forget Request 1 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=322.80) --
+[sequential]   -- round 2/5 (lambda_ewc=201.11) --
+[sequential]   -- round 3/5 (lambda_ewc=176.99) --
+[sequential]   -- round 4/5 (lambda_ewc=107.82) --
+[sequential]   -- round 5/5 (lambda_ewc=92.75) --
+[sequential]   Request 1 final: {'forget_ppl': 3.53414152026683, 'retain_ppl': 3.3874007934279153, 'eval_ppl': 12.033717096593763, 'forget_exact_match': 0.4, 'mia_gap': 1.1797144740492436, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[1][0]: forget_ppl=3.67, forget_exact_match=0.4
+[sequential]   persistence[1][1]: forget_ppl=3.53, forget_exact_match=0.4
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791136881.json
+
+[sequential] ===== Forget Request 2 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=100.00) --
