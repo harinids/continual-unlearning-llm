@@ -67,3 +67,13 @@ trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 [sequential] Intermediate results saved to results/phase1_sequential/persistence_1791140510.json
 
 [sequential] ===== Forget Request 5 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=86.02) --
+[sequential]   -- round 2/5 (lambda_ewc=73.81) --
+[sequential]   -- round 3/5 (lambda_ewc=100.00) --
+[sequential]   -- round 4/5 (lambda_ewc=113.32) --
+[sequential]   -- round 5/5 (lambda_ewc=149.89) --
+[sequential]   Request 5 final: {'forget_ppl': 12.317188105714742, 'retain_ppl': 7.868847734916891, 'eval_ppl': 15.223217470667048, 'forget_exact_match': 0.04, 'mia_gap': 0.19812035953605545, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[5][0]: forget_ppl=14.39, forget_exact_match=0.0
+[sequential]   persistence[5][1]: forget_ppl=11.87, forget_exact_match=0.04
+[sequential]   persistence[5][2]: forget_ppl=12.44, forget_exact_match=0.08
+[sequential]   persistence[5][3]: forget_ppl=14.49, forget_exact_match=0.0

@@ -99,3 +99,21 @@ trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 [geometry] Fitting retain subspace (k=10, samples=16)...
 [sequential]   -- round 2/5 (lambda_ewc=100.00) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
+[sequential]   -- round 3/5 (lambda_ewc=79.31) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[sequential]   -- round 4/5 (lambda_ewc=100.00) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[sequential]   -- round 5/5 (lambda_ewc=78.38) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[sequential]   Request 5 final: {'forget_ppl': 5.657123641214448, 'retain_ppl': 4.07236872653333, 'eval_ppl': 12.855221035075276, 'forget_exact_match': 0.36, 'mia_gap': 0.7655475794614015, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[5][0]: forget_ppl=6.33, forget_exact_match=0.24
+[sequential]   persistence[5][1]: forget_ppl=5.79, forget_exact_match=0.32
+[sequential]   persistence[5][2]: forget_ppl=6.16, forget_exact_match=0.2
+[sequential]   persistence[5][3]: forget_ppl=6.38, forget_exact_match=0.24
+[sequential]   persistence[5][4]: forget_ppl=6.49, forget_exact_match=0.4
+[sequential]   persistence[5][5]: forget_ppl=5.66, forget_exact_match=0.36
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791141559.json
+
+[sequential] ===== Forget Request 6 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=100.00) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
