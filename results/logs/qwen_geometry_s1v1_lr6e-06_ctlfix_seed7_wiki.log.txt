@@ -158,3 +158,4 @@ trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 [sequential] Intermediate results saved to results/phase1_sequential/persistence_1791216226.json
 [qwen_geometry_s1v1_lr6e-06_ctlfix_seed7_wiki] run done in 157.3 min
 [transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+{'tag': 'qwen_geometry_s1v1_lr6e-06_ctlfix_seed7_wiki', 'wikitext2_ppl_before': 23.168673261719935, 'wikitext2_ppl_after': 28.551204199980702, 'rel_change_pct': 23.231934247844777}
