@@ -90,3 +90,17 @@ trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 [sequential]   Converged for this request. Moving to next.
 [sequential]   Request 6 final: {'forget_ppl': 43.74487066491535, 'retain_ppl': 22.290309346604378, 'eval_ppl': 33.326886783815795, 'forget_exact_match': 0.08, 'mia_gap': 0.0895026909126031, 'forget_ok': True, 'retain_ok': None}
 [sequential]   persistence[6][0]: forget_ppl=34.32, forget_exact_match=0.0
+[sequential]   persistence[6][1]: forget_ppl=39.03, forget_exact_match=0.0
+[sequential]   persistence[6][2]: forget_ppl=49.39, forget_exact_match=0.0
+[sequential]   persistence[6][3]: forget_ppl=42.71, forget_exact_match=0.0
+[sequential]   persistence[6][4]: forget_ppl=49.61, forget_exact_match=0.0
+[sequential]   persistence[6][5]: forget_ppl=33.29, forget_exact_match=0.08
+[sequential]   persistence[6][6]: forget_ppl=43.75, forget_exact_match=0.08
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791214418.json
+[sequential]   CUMULATIVE STOP at request 6: retain 6.60x, eval 2.73x vs original baseline
+[qwen_safetystack_s1v1_lr6e-06_ctlfix_seed7_wiki] run done in 127.2 min
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 4358/4358 [00:00<00:00, 66028.17 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 36718/36718 [00:00<00:00, 518358.74 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 3760/3760 [00:00<00:00, 458567.16 examples/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+{'tag': 'qwen_safetystack_s1v1_lr6e-06_ctlfix_seed7_wiki', 'wikitext2_ppl_before': 23.168673261719935, 'wikitext2_ppl_after': 32.45651986073247, 'rel_change_pct': 40.08795192583698}
