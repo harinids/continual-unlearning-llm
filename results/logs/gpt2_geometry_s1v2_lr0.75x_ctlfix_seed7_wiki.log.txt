@@ -149,3 +149,13 @@ trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
 [sequential]   Request 7 final: {'forget_ppl': 16.79729596752298, 'retain_ppl': 9.623623059496452, 'eval_ppl': 27.83539981182866, 'forget_exact_match': 0.2, 'mia_gap': 0.599564966264662, 'forget_ok': True, 'retain_ok': None}
 [sequential]   persistence[7][0]: forget_ppl=15.52, forget_exact_match=0.32
 [sequential]   persistence[7][1]: forget_ppl=18.57, forget_exact_match=0.08
+[sequential]   persistence[7][2]: forget_ppl=19.24, forget_exact_match=0.32
+[sequential]   persistence[7][3]: forget_ppl=16.78, forget_exact_match=0.4
+[sequential]   persistence[7][4]: forget_ppl=18.75, forget_exact_match=0.2
+[sequential]   persistence[7][5]: forget_ppl=15.47, forget_exact_match=0.12
+[sequential]   persistence[7][6]: forget_ppl=18.06, forget_exact_match=0.2
+[sequential]   persistence[7][7]: forget_ppl=16.80, forget_exact_match=0.2
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791227843.json
+[gpt2_geometry_s1v2_lr0.75x_ctlfix_seed7_wiki] run done in 50.1 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (287644 > 1024). Running this sequence through the model will result in indexing errors
+{'tag': 'gpt2_geometry_s1v2_lr0.75x_ctlfix_seed7_wiki', 'wikitext2_ppl_before': 51.368842703042276, 'wikitext2_ppl_after': 73.61880972870352, 'rel_change_pct': 43.31412945058135}
