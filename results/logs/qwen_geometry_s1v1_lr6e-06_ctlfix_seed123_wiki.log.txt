@@ -132,3 +132,22 @@ trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 [sequential]   persistence[6][3]: forget_ppl=7.77, forget_exact_match=0.28
 [sequential]   persistence[6][4]: forget_ppl=7.50, forget_exact_match=0.48
 [sequential]   persistence[6][5]: forget_ppl=6.69, forget_exact_match=0.32
+[sequential]   persistence[6][6]: forget_ppl=6.67, forget_exact_match=0.4
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791195243.json
+
+[sequential] ===== Forget Request 7 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=65.92) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[sequential]   -- round 2/5 (lambda_ewc=44.95) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[sequential]   -- round 3/5 (lambda_ewc=100.00) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[sequential]   -- round 4/5 (lambda_ewc=69.86) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[sequential]   -- round 5/5 (lambda_ewc=50.52) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[sequential]   Request 7 final: {'forget_ppl': 12.322566351432217, 'retain_ppl': 5.285860425973172, 'eval_ppl': 17.92030077947398, 'forget_exact_match': 0.28, 'mia_gap': 0.36788317659399006, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[7][0]: forget_ppl=11.55, forget_exact_match=0.28
+[sequential]   persistence[7][1]: forget_ppl=14.84, forget_exact_match=0.32
+[sequential]   persistence[7][2]: forget_ppl=13.02, forget_exact_match=0.28
+[sequential]   persistence[7][3]: forget_ppl=13.66, forget_exact_match=0.32
