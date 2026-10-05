@@ -43,3 +43,17 @@ trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 [sequential]   -- round 1/5 (lambda_ewc=90.24) --
 [sequential]   -- round 2/5 (lambda_ewc=100.00) --
 [sequential]   -- round 3/5 (lambda_ewc=90.35) --
+[sequential]   -- round 4/5 (lambda_ewc=100.00) --
+[sequential]   -- round 5/5 (lambda_ewc=90.99) --
+[sequential]   Request 3 final: {'forget_ppl': 4.629991682412457, 'retain_ppl': 3.6148555510948293, 'eval_ppl': 11.689933345354106, 'forget_exact_match': 0.28, 'mia_gap': 0.9891187371788446, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[3][0]: forget_ppl=3.89, forget_exact_match=0.4
+[sequential]   persistence[3][1]: forget_ppl=4.35, forget_exact_match=0.44
+[sequential]   persistence[3][2]: forget_ppl=4.15, forget_exact_match=0.28
+[sequential]   persistence[3][3]: forget_ppl=4.63, forget_exact_match=0.28
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791191045.json
+
+[sequential] ===== Forget Request 4 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=100.00) --
+[sequential]   -- round 2/5 (lambda_ewc=78.80) --
+[sequential]   -- round 3/5 (lambda_ewc=100.00) --
+[sequential]   -- round 4/5 (lambda_ewc=76.97) --
