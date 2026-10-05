@@ -51,3 +51,111 @@ trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
 [geometry] Fitting retain subspace (k=20, samples=16)...
 [sequential]   -- round 5/5 (lambda_ewc=245.93) --
 [geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   Request 2 final: {'forget_ppl': 8.86209928759355, 'retain_ppl': 7.78863487218079, 'eval_ppl': 20.979871859026364, 'forget_exact_match': 0.16, 'mia_gap': 0.8532935236836527, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[2][0]: forget_ppl=7.96, forget_exact_match=0.2
+[sequential]   persistence[2][1]: forget_ppl=8.34, forget_exact_match=0.28
+[sequential]   persistence[2][2]: forget_ppl=8.86, forget_exact_match=0.16
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791237243.json
+
+[sequential] ===== Forget Request 3 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=290.40) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 2/5 (lambda_ewc=228.08) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 3/5 (lambda_ewc=256.85) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 4/5 (lambda_ewc=202.97) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 5/5 (lambda_ewc=229.72) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   Request 3 final: {'forget_ppl': 10.842995524084735, 'retain_ppl': 7.999460318487409, 'eval_ppl': 21.93843365015584, 'forget_exact_match': 0.28, 'mia_gap': 0.666903949045873, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[3][0]: forget_ppl=9.27, forget_exact_match=0.2
+[sequential]   persistence[3][1]: forget_ppl=9.50, forget_exact_match=0.28
+[sequential]   persistence[3][2]: forget_ppl=10.07, forget_exact_match=0.16
+[sequential]   persistence[3][3]: forget_ppl=10.84, forget_exact_match=0.28
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791237570.json
+
+[sequential] ===== Forget Request 4 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=182.28) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 2/5 (lambda_ewc=193.22) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 3/5 (lambda_ewc=142.66) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 4/5 (lambda_ewc=149.35) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 5/5 (lambda_ewc=108.49) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   Request 4 final: {'forget_ppl': 13.513613004588624, 'retain_ppl': 8.528375695501435, 'eval_ppl': 23.85967178986042, 'forget_exact_match': 0.4, 'mia_gap': 0.5282630134414839, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[4][0]: forget_ppl=13.16, forget_exact_match=0.2
+[sequential]   persistence[4][1]: forget_ppl=12.38, forget_exact_match=0.28
+[sequential]   persistence[4][2]: forget_ppl=12.90, forget_exact_match=0.16
+[sequential]   persistence[4][3]: forget_ppl=14.05, forget_exact_match=0.24
+[sequential]   persistence[4][4]: forget_ppl=13.51, forget_exact_match=0.4
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791237922.json
+
+[sequential] ===== Forget Request 5 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=111.67) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 2/5 (lambda_ewc=100.00) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 3/5 (lambda_ewc=115.18) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 4/5 (lambda_ewc=100.00) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 5/5 (lambda_ewc=117.55) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   Request 5 final: {'forget_ppl': 17.22581392509737, 'retain_ppl': 9.757383221986142, 'eval_ppl': 28.274037566039198, 'forget_exact_match': 0.2, 'mia_gap': 0.5057899820935594, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[5][0]: forget_ppl=20.08, forget_exact_match=0.12
+[sequential]   persistence[5][1]: forget_ppl=18.24, forget_exact_match=0.2
+[sequential]   persistence[5][2]: forget_ppl=18.65, forget_exact_match=0.12
+[sequential]   persistence[5][3]: forget_ppl=21.55, forget_exact_match=0.16
+[sequential]   persistence[5][4]: forget_ppl=19.40, forget_exact_match=0.44
+[sequential]   persistence[5][5]: forget_ppl=17.22, forget_exact_match=0.2
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791238299.json
+
+[sequential] ===== Forget Request 6 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=100.00) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 2/5 (lambda_ewc=110.80) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 3/5 (lambda_ewc=100.00) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 4/5 (lambda_ewc=117.73) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 5/5 (lambda_ewc=142.30) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   Request 6 final: {'forget_ppl': 38.20251201912006, 'retain_ppl': 12.308667200307118, 'eval_ppl': 38.21225882411941, 'forget_exact_match': 0.24, 'mia_gap': 0.008165776074587683, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[6][0]: forget_ppl=43.41, forget_exact_match=0.08
+[sequential]   persistence[6][1]: forget_ppl=37.73, forget_exact_match=0.08
+[sequential]   persistence[6][2]: forget_ppl=38.75, forget_exact_match=0.12
+[sequential]   persistence[6][3]: forget_ppl=45.44, forget_exact_match=0.12
+[sequential]   persistence[6][4]: forget_ppl=39.84, forget_exact_match=0.28
+[sequential]   persistence[6][5]: forget_ppl=32.13, forget_exact_match=0.2
+[sequential]   persistence[6][6]: forget_ppl=38.21, forget_exact_match=0.24
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791238698.json
+
+[sequential] ===== Forget Request 7 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=178.45) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 2/5 (lambda_ewc=217.35) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 3/5 (lambda_ewc=280.13) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 4/5 (lambda_ewc=375.67) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   -- round 5/5 (lambda_ewc=538.19) --
+[geometry] Fitting retain subspace (k=20, samples=16)...
+[sequential]   Request 7 final: {'forget_ppl': 100.28110929299092, 'retain_ppl': 17.507078847392485, 'eval_ppl': 60.180663264479115, 'forget_exact_match': 0.12, 'mia_gap': 0.5967162100823371, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[7][0]: forget_ppl=233.97, forget_exact_match=0.0
+[sequential]   persistence[7][1]: forget_ppl=144.00, forget_exact_match=0.04
+[sequential]   persistence[7][2]: forget_ppl=136.31, forget_exact_match=0.08
+[sequential]   persistence[7][3]: forget_ppl=167.51, forget_exact_match=0.04
+[sequential]   persistence[7][4]: forget_ppl=152.07, forget_exact_match=0.08
+[sequential]   persistence[7][5]: forget_ppl=84.15, forget_exact_match=0.04
+[sequential]   persistence[7][6]: forget_ppl=115.53, forget_exact_match=0.08
+[sequential]   persistence[7][7]: forget_ppl=100.28, forget_exact_match=0.12
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791239122.json
+[gpt2_geometry_s1v2_k20_ctlfix_seed42_wiki] run done in 46.8 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (287644 > 1024). Running this sequence through the model will result in indexing errors
+{'tag': 'gpt2_geometry_s1v2_k20_ctlfix_seed42_wiki', 'wikitext2_ppl_before': 51.368842703042276, 'wikitext2_ppl_after': 198.2000862716884, 'rel_change_pct': 285.83716479162604}
