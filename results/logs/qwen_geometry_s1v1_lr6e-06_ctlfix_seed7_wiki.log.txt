@@ -140,3 +140,21 @@ trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 [geometry] Fitting retain subspace (k=10, samples=16)...
 [sequential]   -- round 2/5 (lambda_ewc=66.33) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
+[sequential]   -- round 3/5 (lambda_ewc=100.00) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[sequential]   -- round 4/5 (lambda_ewc=85.22) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[sequential]   -- round 5/5 (lambda_ewc=76.03) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[sequential]   Request 7 final: {'forget_ppl': 13.256169655104662, 'retain_ppl': 5.522482372293175, 'eval_ppl': 16.596995024889893, 'forget_exact_match': 0.2, 'mia_gap': 0.23834743342556797, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[7][0]: forget_ppl=11.00, forget_exact_match=0.2
+[sequential]   persistence[7][1]: forget_ppl=12.83, forget_exact_match=0.08
+[sequential]   persistence[7][2]: forget_ppl=14.42, forget_exact_match=0.2
+[sequential]   persistence[7][3]: forget_ppl=14.64, forget_exact_match=0.28
+[sequential]   persistence[7][4]: forget_ppl=12.94, forget_exact_match=0.16
+[sequential]   persistence[7][5]: forget_ppl=11.17, forget_exact_match=0.12
+[sequential]   persistence[7][6]: forget_ppl=12.18, forget_exact_match=0.32
+[sequential]   persistence[7][7]: forget_ppl=13.25, forget_exact_match=0.2
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791216226.json
+[qwen_geometry_s1v1_lr6e-06_ctlfix_seed7_wiki] run done in 157.3 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
