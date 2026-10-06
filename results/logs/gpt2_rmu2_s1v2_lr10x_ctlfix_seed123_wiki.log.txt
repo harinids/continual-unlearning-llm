@@ -39,3 +39,22 @@ trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
 [sequential]   Request 2 final: {'forget_ppl': 12.43284365017558, 'retain_ppl': 10.222069261558744, 'eval_ppl': 28.684663565423044, 'forget_exact_match': 0.24, 'mia_gap': 0.795592724621951, 'forget_ok': True, 'retain_ok': None}
 [sequential]   persistence[2][0]: forget_ppl=10.22, forget_exact_match=0.24
 [sequential]   persistence[2][1]: forget_ppl=13.21, forget_exact_match=0.4
+[sequential]   persistence[2][2]: forget_ppl=12.43, forget_exact_match=0.24
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791309431.json
+
+[sequential] ===== Forget Request 3 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=124.72) --
+[sequential]   -- round 2/5 (lambda_ewc=101.61) --
+[sequential]   -- round 3/5 (lambda_ewc=171.07) --
+[sequential]   HARD STOP: retain_ppl drifted 3.03x from original baseline (threshold 3.0x); forget_ppl also drifted 3.73x
+[sequential]   Converged for this request. Moving to next.
+[sequential]   Request 3 final: {'forget_ppl': 40.635620448020234, 'retain_ppl': 31.005437596356973, 'eval_ppl': 46.917221568337595, 'forget_exact_match': 0.2, 'mia_gap': 0.1946175019819658, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[3][0]: forget_ppl=43.95, forget_exact_match=0.12
+[sequential]   persistence[3][1]: forget_ppl=54.99, forget_exact_match=0.16
+[sequential]   persistence[3][2]: forget_ppl=60.34, forget_exact_match=0.12
+[sequential]   persistence[3][3]: forget_ppl=40.65, forget_exact_match=0.2
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791309659.json
+[sequential]   CUMULATIVE STOP at request 3: retain 4.00x, eval 2.22x vs original baseline
+[gpt2_rmu2_s1v2_lr10x_ctlfix_seed123_wiki] run done in 17.3 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (287644 > 1024). Running this sequence through the model will result in indexing errors
+{'tag': 'gpt2_rmu2_s1v2_lr10x_ctlfix_seed123_wiki', 'wikitext2_ppl_before': 51.368842703042276, 'wikitext2_ppl_after': 302.5246419675708, 'rel_change_pct': 488.9263336463175}
