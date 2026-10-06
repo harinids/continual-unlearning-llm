@@ -116,3 +116,9 @@ trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
 [sequential]   persistence[7][3]: forget_ppl=8.47, forget_exact_match=0.2
 [sequential]   persistence[7][4]: forget_ppl=8.52, forget_exact_match=0.4
 [sequential]   persistence[7][5]: forget_ppl=8.25, forget_exact_match=0.24
+[sequential]   persistence[7][6]: forget_ppl=8.34, forget_exact_match=0.36
+[sequential]   persistence[7][7]: forget_ppl=7.44, forget_exact_match=0.28
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791260002.json
+[gpt2_rmu_s1v2_lr3x_ctlfix_seed42_wiki] run done in 44.4 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (287644 > 1024). Running this sequence through the model will result in indexing errors
+{'tag': 'gpt2_rmu_s1v2_lr3x_ctlfix_seed42_wiki', 'wikitext2_ppl_before': 51.368842703042276, 'wikitext2_ppl_after': 52.14668085242687, 'rel_change_pct': 1.5142216730113844}
