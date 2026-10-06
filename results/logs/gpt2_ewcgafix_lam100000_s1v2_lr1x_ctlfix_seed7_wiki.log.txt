@@ -1,0 +1,67 @@
+[gpt2_ewcgafix_lam100000_s1v2_lr1x_ctlfix_seed7_wiki] method=gradient_ascent | patience=5 | lr=1.00e-05 (base 1.00e-05 x1.0) | max_rounds=5 | stage1=results/stage1/gpt2_tofu_v2
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|██████████| 148/148 [00:00<00:00, 2335.77it/s]
+/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/layer.py:2631: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+  warnings.warn(
+trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
+Generating train split:   0%|          | 0/400 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 400/400 [00:00<00:00, 9519.64 examples/s]
+[transformers] `loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+[sequential] Overall baseline (full forget10 pool): {'forget_ppl': 8.008153805119303, 'retain_ppl': 7.759823408563233, 'eval_ppl': 21.170204706356266, 'forget_exact_match': 0.275, 'mia_gap': 0.9864714824236356, 'forget_ok': True, 'retain_ok': None}
+
+[sequential] ===== Forget Request 0 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 2/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 3/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 4/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 5/5 (lambda_ewc=100000.00) --
+[sequential]   Request 0 final: {'forget_ppl': 7.727167598808087, 'retain_ppl': 7.758393516380724, 'eval_ppl': 21.16032801265702, 'forget_exact_match': 0.36, 'mia_gap': 0.9932025409006813, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[0][0]: forget_ppl=7.73, forget_exact_match=0.36
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791307454.json
+
+[sequential] ===== Forget Request 1 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 2/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 3/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 4/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 5/5 (lambda_ewc=100000.00) --
+[sequential]   Request 1 final: {'forget_ppl': 8.645096034270804, 'retain_ppl': 7.761663717262395, 'eval_ppl': 21.11998413510279, 'forget_exact_match': 0.08, 'mia_gap': 0.8789872533672458, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[1][0]: forget_ppl=7.85, forget_exact_match=0.36
+[sequential]   persistence[1][1]: forget_ppl=8.65, forget_exact_match=0.08
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791307721.json
+
+[sequential] ===== Forget Request 2 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 2/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 3/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 4/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 5/5 (lambda_ewc=100000.00) --
+[sequential]   Request 2 final: {'forget_ppl': 9.751686007708146, 'retain_ppl': 7.79363405579281, 'eval_ppl': 21.209620519892184, 'forget_exact_match': 0.36, 'mia_gap': 0.7854968846499264, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[2][0]: forget_ppl=8.14, forget_exact_match=0.36
+[sequential]   persistence[2][1]: forget_ppl=8.97, forget_exact_match=0.08
+[sequential]   persistence[2][2]: forget_ppl=9.75, forget_exact_match=0.36
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791308012.json
+
+[sequential] ===== Forget Request 3 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 2/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 3/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 4/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 5/5 (lambda_ewc=100000.00) --
+[sequential]   Request 3 final: {'forget_ppl': 9.033458417596394, 'retain_ppl': 8.063593024870638, 'eval_ppl': 21.81842495866352, 'forget_exact_match': 0.36, 'mia_gap': 0.9782973920905982, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[3][0]: forget_ppl=9.03, forget_exact_match=0.36
+[sequential]   persistence[3][1]: forget_ppl=10.15, forget_exact_match=0.04
+[sequential]   persistence[3][2]: forget_ppl=10.87, forget_exact_match=0.4
+[sequential]   persistence[3][3]: forget_ppl=9.03, forget_exact_match=0.36
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791308326.json
+
+[sequential] ===== Forget Request 4 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 2/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 3/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 4/5 (lambda_ewc=100000.00) --
+[sequential]   -- round 5/5 (lambda_ewc=100000.00) --
+[sequential]   Request 4 final: {'forget_ppl': 16.28646468518162, 'retain_ppl': 10.130648133152484, 'eval_ppl': 26.414109487267808, 'forget_exact_match': 0.2, 'mia_gap': 0.45619597539796963, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[4][0]: forget_ppl=12.70, forget_exact_match=0.36
+[sequential]   persistence[4][1]: forget_ppl=15.33, forget_exact_match=0.04
