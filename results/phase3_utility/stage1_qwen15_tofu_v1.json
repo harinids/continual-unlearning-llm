@@ -1,0 +1,6 @@
+{
+  "tag": "stage1_qwen15_tofu_v1",
+  "wikitext2_ppl_before": 12.255204841510242,
+  "wikitext2_ppl_after": 15.305244184516335,
+  "rel_change_pct": 24.88770593760412
+}

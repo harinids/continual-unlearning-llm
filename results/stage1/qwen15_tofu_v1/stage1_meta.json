@@ -1,0 +1,33 @@
+{
+  "before": {
+    "forget": 14.699757281830188,
+    "retain": 14.963382358900832,
+    "holdout": 5.527007386247752
+  },
+  "after": {
+    "forget": 2.9158122058808127,
+    "retain": 2.8902424699991105,
+    "holdout": 9.91281758160821
+  },
+  "wikitext2": {
+    "tag": "stage1_qwen15_tofu_v1",
+    "wikitext2_ppl_before": 12.255204841510242,
+    "wikitext2_ppl_after": 15.305244184516335,
+    "rel_change_pct": 24.88770593760412
+  },
+  "r": 16,
+  "alpha": 32,
+  "lr": 0.0001,
+  "epochs": 3,
+  "bs": 4,
+  "seed": 0,
+  "targets": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ]
+}

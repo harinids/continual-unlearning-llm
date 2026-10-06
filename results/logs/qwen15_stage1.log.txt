@@ -1,0 +1,14 @@
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+forget=400 retain=3600 holdout=100
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  74%|███████▎  | 249/338 [00:00<00:00, 2488.25it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 2625.56it/s]
+trainable params: 18,464,768 || all params: 1,562,179,072 || trainable%: 1.1820
+before: {'forget': 14.7, 'retain': 14.96, 'holdout': 5.53}
+epoch 1/3  train_loss=1.656
+epoch 2/3  train_loss=1.320
+epoch 3/3  train_loss=1.124
+after:  {'forget': 2.92, 'retain': 2.89, 'holdout': 9.91}
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+{'tag': 'stage1_qwen15_tofu_v1', 'wikitext2_ppl_before': 12.255204841510242, 'wikitext2_ppl_after': 15.305244184516335, 'rel_change_pct': 24.88770593760412}
+saved results/stage1/qwen15_tofu_v1
