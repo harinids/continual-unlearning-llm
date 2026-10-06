@@ -32,22 +32,26 @@ class SelectiveUnlearner:
         u = self.cfg.unlearning
         n = self.model.config.num_hidden_layers
         layer = getattr(u, "rmu_layer", None) or max(1, n // 4)
-        c = float(getattr(u, "rmu_c", 6.5)); alpha = float(getattr(u, "rmu_alpha", 100.0))
+        c = float(getattr(u, "rmu_c", 1.0)); alpha = float(getattr(u, "rmu_alpha", 1.0))
         def hid(batch):
             ids = batch["input_ids"].to(self.device); am = batch["attention_mask"].to(self.device)
             out = self.model(input_ids=ids, attention_mask=am, output_hidden_states=True)
             return out.hidden_states[layer], am.unsqueeze(-1).float()
         if not hasattr(self, "_rmu_u"):
+            with torch.no_grad(), self.model.disable_adapter():
+                h0, m0 = hid(forget_batch)
+            self._rmu_scale = float(h0.norm(dim=-1)[m0.squeeze(-1).bool()].median())
             g = torch.Generator().manual_seed(0)
             v = torch.rand(self.model.config.hidden_size, generator=g)
-            self._rmu_u = (v / v.norm() * c).to(self.device)
+            self._rmu_u = (v / v.norm() * c * self._rmu_scale).to(self.device)
+        s2 = self._rmu_scale ** 2
         h, m = hid(forget_batch)
-        loss = (((h - self._rmu_u) ** 2) * m).sum() / (m.sum() * h.shape[-1])
+        loss = (((h - self._rmu_u) ** 2) * m).sum() / (m.sum() * s2)
         if retain_batch:
             hr, mr = hid(retain_batch)
             with torch.no_grad(), self.model.disable_adapter():
                 hr_ref, _ = hid(retain_batch)
-            loss = loss + alpha * (((hr - hr_ref) ** 2) * mr).sum() / (mr.sum() * hr.shape[-1])
+            loss = loss + alpha * (((hr - hr_ref) ** 2) * mr).sum() / (mr.sum() * s2)
         return loss
 
     def _step_loss(self, forget_batch, retain_batch, ewc_lambda: float):
