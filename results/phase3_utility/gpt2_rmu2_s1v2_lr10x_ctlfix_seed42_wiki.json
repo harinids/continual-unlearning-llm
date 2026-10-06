@@ -1,0 +1,6 @@
+{
+  "tag": "gpt2_rmu2_s1v2_lr10x_ctlfix_seed42_wiki",
+  "wikitext2_ppl_before": 51.368842703042276,
+  "wikitext2_ppl_after": 231.23256702427412,
+  "rel_change_pct": 350.1416712091502
+}

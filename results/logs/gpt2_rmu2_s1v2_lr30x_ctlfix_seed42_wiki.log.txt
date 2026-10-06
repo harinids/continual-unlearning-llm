@@ -1,0 +1,37 @@
+[gpt2_rmu2_s1v2_lr30x_ctlfix_seed42_wiki] method=rmu | patience=5 | lr=3.00e-04 (base 1.00e-05 x30) | max_rounds=5 | stage1=results/stage1/gpt2_tofu_v2
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|██████████| 148/148 [00:00<00:00, 2727.93it/s]
+/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/layer.py:2631: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+  warnings.warn(
+trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
+[transformers] `loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+[sequential] Overall baseline (full forget10 pool): {'forget_ppl': 8.007214559275127, 'retain_ppl': 7.759716562734484, 'eval_ppl': 21.170204706356266, 'forget_exact_match': 0.275, 'mia_gap': 0.9915907680071316, 'forget_ok': True, 'retain_ok': None}
+
+[sequential] ===== Forget Request 0 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=1000.00) --
+[sequential]   -- round 2/5 (lambda_ewc=1109.64) --
+[sequential]   -- round 3/5 (lambda_ewc=809.37) --
+[sequential]   -- round 4/5 (lambda_ewc=852.75) --
+[sequential]   -- round 5/5 (lambda_ewc=653.16) --
+[sequential]   Request 0 final: {'forget_ppl': 9.811607141534926, 'retain_ppl': 10.109724851832421, 'eval_ppl': 28.64190897275106, 'forget_exact_match': 0.24, 'mia_gap': 1.2453448929629487, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[0][0]: forget_ppl=9.82, forget_exact_match=0.24
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791288860.json
+
+[sequential] ===== Forget Request 1 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=781.78) --
+[sequential]   -- round 2/5 (lambda_ewc=1294.37) --
+[sequential]   HARD STOP: retain_ppl drifted 11.75x from original baseline (threshold 3.0x); forget_ppl also drifted 29.03x
+[sequential]   Converged for this request. Moving to next.
+[sequential]   Request 1 final: {'forget_ppl': 298.501272005026, 'retain_ppl': 118.80492890609138, 'eval_ppl': 134.48110940909035, 'forget_exact_match': 0.0, 'mia_gap': 0.8011302633599913, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[1][0]: forget_ppl=267.68, forget_exact_match=0.0
+[sequential]   persistence[1][1]: forget_ppl=298.40, forget_exact_match=0.0
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791289010.json
+[sequential]   CUMULATIVE STOP at request 1: retain 15.31x, eval 6.35x vs original baseline
+[gpt2_rmu2_s1v2_lr30x_ctlfix_seed42_wiki] run done in 7.6 min
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 4358/4358 [00:00<00:00, 61948.52 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 36718/36718 [00:00<00:00, 666380.17 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 3760/3760 [00:00<00:00, 620302.98 examples/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (287644 > 1024). Running this sequence through the model will result in indexing errors
+{'tag': 'gpt2_rmu2_s1v2_lr30x_ctlfix_seed42_wiki', 'wikitext2_ppl_before': 51.368842703042276, 'wikitext2_ppl_after': 941.8944435029648, 'rel_change_pct': 1733.5909355559259}
