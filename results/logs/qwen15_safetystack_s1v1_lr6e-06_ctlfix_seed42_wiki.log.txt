@@ -1,0 +1,11 @@
+[qwen15_safetystack_s1v1_lr6e-06_ctlfix_seed42_wiki] method=gradient_ascent | patience=5 | lr=6.00e-06 (base 1.00e-05 x0.6) | max_rounds=5 | stage1=results/stage1/qwen15_tofu_v1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  64%|██████▍   | 216/338 [00:00<00:00, 2147.65it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 2198.00it/s]
+trainable params: 2,179,072 || all params: 1,545,893,376 || trainable%: 0.1410
+[sequential] Overall baseline (full forget10 pool): {'forget_ppl': 2.9230448743585336, 'retain_ppl': 2.9195863562481423, 'eval_ppl': 9.77747089731018, 'forget_exact_match': 0.415, 'mia_gap': 1.228994025175388, 'forget_ok': False, 'retain_ok': None}
+
+[sequential] ===== Forget Request 0 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=1000.00) --
+[sequential]   -- round 2/5 (lambda_ewc=1012.03) --
