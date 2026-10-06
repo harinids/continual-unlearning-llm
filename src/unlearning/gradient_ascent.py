@@ -27,6 +27,29 @@ class SelectiveUnlearner:
         self.forget_weight = cfg.unlearning.forget_loss_weight
         self.retain_weight = cfg.unlearning.retain_loss_weight
 
+    def _rmu_loss(self, forget_batch, retain_batch):
+        import torch
+        u = self.cfg.unlearning
+        n = self.model.config.num_hidden_layers
+        layer = getattr(u, "rmu_layer", None) or max(1, n // 4)
+        c = float(getattr(u, "rmu_c", 6.5)); alpha = float(getattr(u, "rmu_alpha", 100.0))
+        def hid(batch):
+            ids = batch["input_ids"].to(self.device); am = batch["attention_mask"].to(self.device)
+            out = self.model(input_ids=ids, attention_mask=am, output_hidden_states=True)
+            return out.hidden_states[layer], am.unsqueeze(-1).float()
+        if not hasattr(self, "_rmu_u"):
+            g = torch.Generator().manual_seed(0)
+            v = torch.rand(self.model.config.hidden_size, generator=g)
+            self._rmu_u = (v / v.norm() * c).to(self.device)
+        h, m = hid(forget_batch)
+        loss = (((h - self._rmu_u) ** 2) * m).sum() / (m.sum() * h.shape[-1])
+        if retain_batch:
+            hr, mr = hid(retain_batch)
+            with torch.no_grad(), self.model.disable_adapter():
+                hr_ref, _ = hid(retain_batch)
+            loss = loss + alpha * (((hr - hr_ref) ** 2) * mr).sum() / (mr.sum() * hr.shape[-1])
+        return loss
+
     def _step_loss(self, forget_batch, retain_batch, ewc_lambda: float):
         import torch
 
@@ -43,6 +66,8 @@ class SelectiveUnlearner:
             with torch.no_grad(), self.model.disable_adapter():
                 ref_loss = _lm_loss(self.model, forget_batch, self.device)
             task_loss = (2.0 / beta) * torch.nn.functional.softplus(beta * (ref_loss - forget_loss))
+        elif self.method == "rmu":
+            task_loss = self._rmu_loss(forget_batch, retain_batch)
         else:
             raise ValueError(f"Unknown unlearning method: {self.method}")
 
