@@ -20,3 +20,7 @@ trainable params: 2,179,072 || all params: 1,545,893,376 || trainable%: 0.1410
 [sequential]   -- round 1/5 (lambda_ewc=543.03) --
 [sequential]   -- round 2/5 (lambda_ewc=362.64) --
 [sequential]   -- round 3/5 (lambda_ewc=342.36) --
+[sequential]   -- round 4/5 (lambda_ewc=229.62) --
+[sequential]   -- round 5/5 (lambda_ewc=218.62) --
+[sequential]   Request 1 final: {'forget_ppl': 3.051140803467183, 'retain_ppl': 2.9234196904279552, 'eval_ppl': 9.62427149305004, 'forget_exact_match': 0.36, 'mia_gap': 1.2242279727380356, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[1][0]: forget_ppl=3.08, forget_exact_match=0.28
