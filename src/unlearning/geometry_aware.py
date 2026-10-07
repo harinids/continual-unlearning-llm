@@ -30,6 +30,7 @@ class GeometryAwareUnlearner(SelectiveUnlearner):
         self.subspace_samples = getattr(geo_cfg, "subspace_samples", 16) if geo_cfg else 16
         self.keep_ewc = getattr(geo_cfg, "keep_ewc", True) if geo_cfg else True
         self.project_update = bool(getattr(geo_cfg, "project_update", False)) if geo_cfg else False
+        self.random_subspace = bool(getattr(geo_cfg, "random_subspace", False)) if geo_cfg else False
         self._keep = []
         # self.method was set to cfg.unlearning.method = "geometry_aware" by
         # super().__init__() -- but _step_loss() (inherited, unmodified)
@@ -51,6 +52,10 @@ class GeometryAwareUnlearner(SelectiveUnlearner):
         print(f"[geometry] Fitting retain subspace (k={self.subspace_dim}, "
               f"samples={self.subspace_samples})...")
         self.estimator.fit(self.model, retain_loader, self.device)
+        if self.random_subspace:
+            _b = self.estimator.basis
+            self.estimator.basis, _ = torch.linalg.qr(torch.randn_like(_b))
+            print("[geometry] CONTROL: random orthonormal subspace replaces the retain subspace")
 
         effective_ewc_lambda = ewc_lambda if self.keep_ewc else 0.0
 
