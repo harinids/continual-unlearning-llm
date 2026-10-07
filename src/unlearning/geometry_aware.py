@@ -29,6 +29,8 @@ class GeometryAwareUnlearner(SelectiveUnlearner):
         self.subspace_dim = getattr(geo_cfg, "subspace_dim", 10) if geo_cfg else 10
         self.subspace_samples = getattr(geo_cfg, "subspace_samples", 16) if geo_cfg else 16
         self.keep_ewc = getattr(geo_cfg, "keep_ewc", True) if geo_cfg else True
+        self.project_update = bool(getattr(geo_cfg, "project_update", False)) if geo_cfg else False
+        self._keep = []
         # self.method was set to cfg.unlearning.method = "geometry_aware" by
         # super().__init__() -- but _step_loss() (inherited, unmodified)
         # only recognizes gradient_ascent/gradient_difference/npo as the
@@ -76,6 +78,7 @@ class GeometryAwareUnlearner(SelectiveUnlearner):
                 # --- geometry-aware projection ---
                 flat = _flatten_grads(self.model)
                 projected = self.estimator.project_out(flat)
+                self._keep.append(float(projected.norm() / flat.norm().clamp(min=1e-12)))
                 _scatter_like_grads(self.model, projected)
                 # ----------------------------------
 
@@ -83,7 +86,16 @@ class GeometryAwareUnlearner(SelectiveUnlearner):
                     [p for p in self.model.parameters() if p.requires_grad],
                     self.cfg.unlearning.grad_clip,
                 )
+                if self.project_update:
+                    _tp = [p for p in self.model.parameters() if p.requires_grad]
+                    _before = torch.nn.utils.parameters_to_vector(_tp).detach().clone()
                 optimizer.step()
+                if self.project_update:
+                    _after = torch.nn.utils.parameters_to_vector(_tp).detach()
+                    _new = _before + self.estimator.project_out(_after - _before)
+                    _o = 0
+                    for _p in _tp:
+                        _n = _p.numel(); _p.data.copy_(_new[_o:_o + _n].view_as(_p)); _o += _n
                 global_step += 1
                 metrics["epoch"] = epoch
                 metrics["global_step"] = global_step
@@ -99,5 +111,9 @@ class GeometryAwareUnlearner(SelectiveUnlearner):
                 if history:
                     history[-1]["aborted"] = True
 
+        if self._keep:
+            print(f"[geometry] proj_keep (||P g||/||g||) mean={sum(self._keep)/len(self._keep):.3f} "
+                  f"min={min(self._keep):.3f} steps={len(self._keep)} project_update={self.project_update}")
+            self._keep = []
         self.model.eval()
         return history
