@@ -194,3 +194,12 @@ trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
 [sequential]   persistence[7][4]: forget_ppl=94.00, forget_exact_match=0.08
 [sequential]   persistence[7][5]: forget_ppl=82.45, forget_exact_match=0.12
 [sequential]   persistence[7][6]: forget_ppl=89.34, forget_exact_match=0.04
+[sequential]   persistence[7][7]: forget_ppl=83.67, forget_exact_match=0.0
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791400542.json
+[sequential]   CUMULATIVE STOP at request 7: retain 2.32x, eval 3.22x vs original baseline
+[gpt2_geometry_s1v2_k5_ctlfix_seed7_wiki] run done in 49.3 min
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 4358/4358 [00:00<00:00, 47031.34 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 36718/36718 [00:00<00:00, 534947.10 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 3760/3760 [00:00<00:00, 526335.25 examples/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (287644 > 1024). Running this sequence through the model will result in indexing errors
+{'tag': 'gpt2_geometry_s1v2_k5_ctlfix_seed7_wiki', 'wikitext2_ppl_before': 51.368842703042276, 'wikitext2_ppl_after': 203.76488641333552, 'rel_change_pct': 296.6701909001109}
