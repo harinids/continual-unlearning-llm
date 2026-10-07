@@ -102,3 +102,10 @@ trainable params: 2,179,072 || all params: 1,545,893,376 || trainable%: 0.1410
 [sequential]   -- round 3/5 (lambda_ewc=100.00) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
 [geometry] proj_keep (||P g||/||g||) mean=0.978 min=0.965 steps=28 project_update=False
+[sequential]   -- round 4/5 (lambda_ewc=78.68) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.975 min=0.962 steps=28 project_update=False
+[sequential]   -- round 5/5 (lambda_ewc=100.00) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.976 min=0.954 steps=28 project_update=False
+[sequential]   Request 4 final: {'forget_ppl': 3.4611112055924105, 'retain_ppl': 3.075708710466374, 'eval_ppl': 8.809372486719028, 'forget_exact_match': 0.32, 'mia_gap': 0.9511427014738651, 'forget_ok': False, 'retain_ok': None}
