@@ -188,3 +188,10 @@ trainable params: 2,179,072 || all params: 1,545,893,376 || trainable%: 0.1410
 [sequential]   persistence[7][1]: forget_ppl=6.70, forget_exact_match=0.12
 [sequential]   persistence[7][2]: forget_ppl=6.99, forget_exact_match=0.32
 [sequential]   persistence[7][3]: forget_ppl=6.71, forget_exact_match=0.16
+[sequential]   persistence[7][4]: forget_ppl=6.65, forget_exact_match=0.16
+[sequential]   persistence[7][5]: forget_ppl=6.11, forget_exact_match=0.16
+[sequential]   persistence[7][6]: forget_ppl=6.14, forget_exact_match=0.2
+[sequential]   persistence[7][7]: forget_ppl=6.73, forget_exact_match=0.2
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791375920.json
+[qwen15_geometry_s1v1_lr6e-06_ctlfix_seed7_wiki] run done in 452.4 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
