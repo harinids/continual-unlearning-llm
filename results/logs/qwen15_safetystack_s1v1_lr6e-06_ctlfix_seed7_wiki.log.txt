@@ -78,3 +78,10 @@ trainable params: 2,179,072 || all params: 1,545,893,376 || trainable%: 0.1410
 [sequential]   persistence[5][2]: forget_ppl=4.42, forget_exact_match=0.4
 [sequential]   persistence[5][3]: forget_ppl=4.13, forget_exact_match=0.4
 [sequential]   persistence[5][4]: forget_ppl=4.17, forget_exact_match=0.16
+[sequential]   persistence[5][5]: forget_ppl=3.96, forget_exact_match=0.2
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791364465.json
+
+[sequential] ===== Forget Request 6 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=100.00) --
+[sequential]   -- round 2/5 (lambda_ewc=78.80) --
+[sequential]   -- round 3/5 (lambda_ewc=100.00) --
