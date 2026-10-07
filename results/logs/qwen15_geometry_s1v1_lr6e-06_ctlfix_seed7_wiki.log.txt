@@ -142,3 +142,12 @@ trainable params: 2,179,072 || all params: 1,545,893,376 || trainable%: 0.1410
 [sequential] Intermediate results saved to results/phase1_sequential/persistence_1791367931.json
 
 [sequential] ===== Forget Request 6 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=100.00) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.945 min=0.910 steps=28 project_update=False
+[sequential]   -- round 2/5 (lambda_ewc=75.60) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.924 min=0.880 steps=28 project_update=False
+[sequential]   -- round 3/5 (lambda_ewc=100.00) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.923 min=0.872 steps=28 project_update=False
