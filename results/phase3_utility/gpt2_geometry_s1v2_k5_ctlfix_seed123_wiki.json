@@ -1,0 +1,6 @@
+{
+  "tag": "gpt2_geometry_s1v2_k5_ctlfix_seed123_wiki",
+  "wikitext2_ppl_before": 51.368842703042276,
+  "wikitext2_ppl_after": 263.61945881848783,
+  "rel_change_pct": 413.1894061589891
+}
