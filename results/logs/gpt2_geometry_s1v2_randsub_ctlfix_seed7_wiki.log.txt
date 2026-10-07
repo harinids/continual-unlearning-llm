@@ -179,3 +179,30 @@ trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
 [geometry] Fitting retain subspace (k=10, samples=16)...
 [geometry] CONTROL: random orthonormal subspace replaces the retain subspace
 [geometry] proj_keep (||P g||/||g||) mean=1.000 min=1.000 steps=28 project_update=False
+[sequential]   -- round 2/5 (lambda_ewc=588.24) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] CONTROL: random orthonormal subspace replaces the retain subspace
+[geometry] proj_keep (||P g||/||g||) mean=1.000 min=1.000 steps=28 project_update=False
+[sequential]   -- round 3/5 (lambda_ewc=1042.58) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] CONTROL: random orthonormal subspace replaces the retain subspace
+[geometry] proj_keep (||P g||/||g||) mean=1.000 min=1.000 steps=28 project_update=False
+[sequential]   -- round 4/5 (lambda_ewc=2372.17) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] CONTROL: random orthonormal subspace replaces the retain subspace
+[geometry] proj_keep (||P g||/||g||) mean=1.000 min=1.000 steps=28 project_update=False
+[sequential]   HARD STOP: retain_ppl drifted 4.05x from original baseline (threshold 3.0x); forget_ppl also drifted 5.95x
+[sequential]   Converged for this request. Moving to next.
+[sequential]   Request 6 final: {'forget_ppl': 170.98181690571383, 'retain_ppl': 66.5302509994264, 'eval_ppl': 154.75957041629212, 'forget_exact_match': 0.0, 'mia_gap': 0.12400161827003497, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[6][0]: forget_ppl=119.15, forget_exact_match=0.0
+[sequential]   persistence[6][1]: forget_ppl=192.11, forget_exact_match=0.0
+[sequential]   persistence[6][2]: forget_ppl=195.42, forget_exact_match=0.0
+[sequential]   persistence[6][3]: forget_ppl=163.96, forget_exact_match=0.0
+[sequential]   persistence[6][4]: forget_ppl=196.58, forget_exact_match=0.0
+[sequential]   persistence[6][5]: forget_ppl=139.89, forget_exact_match=0.0
+[sequential]   persistence[6][6]: forget_ppl=170.98, forget_exact_match=0.0
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791382274.json
+[sequential]   CUMULATIVE STOP at request 6: retain 8.57x, eval 7.31x vs original baseline
+[gpt2_geometry_s1v2_randsub_ctlfix_seed7_wiki] run done in 38.9 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (287644 > 1024). Running this sequence through the model will result in indexing errors
+{'tag': 'gpt2_geometry_s1v2_randsub_ctlfix_seed7_wiki', 'wikitext2_ppl_before': 51.368842703042276, 'wikitext2_ppl_after': 433.48203527094716, 'rel_change_pct': 743.8617894836758}
