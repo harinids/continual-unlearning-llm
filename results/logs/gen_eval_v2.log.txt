@@ -1,0 +1,26 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating train split:   0%|          | 0/400 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 400/400 [00:00<00:00, 8830.07 examples/s]
+Generating train split:   0%|          | 0/3600 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 3600/3600 [00:00<00:00, 357519.87 examples/s]
+Generating train split:   0%|          | 0/100 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 100/100 [00:00<00:00, 36030.44 examples/s]
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|██████████| 148/148 [00:00<00:00, 2366.84it/s]
+/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/layer.py:2631: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+  warnings.warn(
+trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
+stage1_baseline {'forget_req0_6': (0.269, 0.284), 'retain': (0.315, 0.265)}
+gpt2_geometry_s1v2_lr1x_ctlfix_seed123_wiki {'forget_req0_6': (0.131, 0.177), 'retain': (0.26, 0.21)}
+gpt2_geometry_s1v2_lr1x_ctlfix_seed42_wiki {'forget_req0_6': (0.057, 0.142), 'retain': (0.16, 0.17)}
+gpt2_geometry_s1v2_lr1x_ctlfix_seed7_wiki {'forget_req0_6': (0.074, 0.146), 'retain': (0.2, 0.183)}
+gpt2_geometry_s1v2_pu_ctlfix_seed123_wiki {'forget_req0_6': (0.143, 0.196), 'retain': (0.28, 0.223)}
+gpt2_geometry_s1v2_pu_ctlfix_seed42_wiki {'forget_req0_6': (0.074, 0.162), 'retain': (0.22, 0.205)}
+gpt2_geometry_s1v2_pu_ctlfix_seed7_wiki {'forget_req0_6': (0.126, 0.169), 'retain': (0.255, 0.214)}
+gpt2_geometry_s1v2_randsub_ctlfix_seed123_wiki {'forget_req0_6': (0.017, 0.104), 'retain': (0.03, 0.107)}
+gpt2_geometry_s1v2_randsub_ctlfix_seed42_wiki {'forget_req0_6': (0.063, 0.137), 'retain': (0.085, 0.151)}
+gpt2_geometry_s1v2_randsub_ctlfix_seed7_wiki {'forget_req0_6': (0.0, 0.08), 'retain': (0.0, 0.095)}
+gpt2_safetystack_s1v2_lr1x_ctlfix_seed123_wiki {'forget_req0_6': (0.0, 0.086), 'retain': (0.005, 0.09)}
+gpt2_safetystack_s1v2_lr1x_ctlfix_seed42_wiki {'forget_req0_6': (0.057, 0.125), 'retain': (0.08, 0.14)}
+gpt2_safetystack_s1v2_lr1x_ctlfix_seed7_wiki {'forget_req0_6': (0.0, 0.079), 'retain': (0.0, 0.079)}
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 4052.12it/s]
+trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
+stage1_baseline {'forget_req0_6': (0.411, 0.352), 'retain': (0.445, 0.328)}
