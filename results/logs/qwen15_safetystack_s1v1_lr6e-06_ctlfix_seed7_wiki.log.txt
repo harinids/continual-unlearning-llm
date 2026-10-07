@@ -9,3 +9,6 @@ trainable params: 2,179,072 || all params: 1,545,893,376 || trainable%: 0.1410
 [sequential] ===== Forget Request 0 (25 examples) =====
 [sequential]   -- round 1/5 (lambda_ewc=1000.00) --
 [sequential]   -- round 2/5 (lambda_ewc=916.07) --
+[sequential]   -- round 3/5 (lambda_ewc=578.50) --
+[sequential]   -- round 4/5 (lambda_ewc=513.79) --
+[sequential]   -- round 5/5 (lambda_ewc=314.41) --
