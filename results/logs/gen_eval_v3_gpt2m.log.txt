@@ -1,0 +1,22 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating train split:   0%|          | 0/3600 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 3600/3600 [00:00<00:00, 294469.15 examples/s]
+Generating train split:   0%|          | 0/100 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 100/100 [00:00<00:00, 52718.75 examples/s]
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|██████████| 148/148 [00:00<00:00, 5863.11it/s]
+/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/layer.py:2631: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+  warnings.warn(
+trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
+stage1_baseline {'forget_req0_6': (0.269, 0.284), 'retain': (0.315, 0.265)}
+gpt2_geometry_s1v2_lr0.5x_ctlfix_seed123_wiki {'forget_req0_6': (0.269, 0.267), 'retain': (0.305, 0.262)}
+gpt2_geometry_s1v2_lr0.5x_ctlfix_seed42_wiki {'forget_req0_6': (0.286, 0.267), 'retain': (0.305, 0.264)}
+gpt2_geometry_s1v2_lr0.5x_ctlfix_seed7_wiki {'forget_req0_6': (0.274, 0.268), 'retain': (0.31, 0.263)}
+gpt2_geometry_s1v2_lr0.75x_ctlfix_seed123_wiki {'forget_req0_6': (0.223, 0.239), 'retain': (0.295, 0.235)}
+gpt2_geometry_s1v2_lr0.75x_ctlfix_seed42_wiki {'forget_req0_6': (0.211, 0.228), 'retain': (0.315, 0.235)}
+gpt2_geometry_s1v2_lr0.75x_ctlfix_seed7_wiki {'forget_req0_6': (0.234, 0.238), 'retain': (0.285, 0.237)}
+gpt2_safetystack_s1v2_lr0.5x_ctlfix_seed123_wiki {'forget_req0_6': (0.274, 0.267), 'retain': (0.295, 0.254)}
+gpt2_safetystack_s1v2_lr0.5x_ctlfix_seed42_wiki {'forget_req0_6': (0.274, 0.249), 'retain': (0.31, 0.25)}
+gpt2_safetystack_s1v2_lr0.75x_ctlfix_seed123_wiki {'forget_req0_6': (0.12, 0.165), 'retain': (0.19, 0.183)}
+gpt2_safetystack_s1v2_lr0.75x_ctlfix_seed42_wiki {'forget_req0_6': (0.086, 0.138), 'retain': (0.11, 0.15)}
+gpt2_safetystack_s1v2_lr0.75x_ctlfix_seed7_wiki {'forget_req0_6': (0.143, 0.168), 'retain': (0.195, 0.175)}
+GEN DONE
