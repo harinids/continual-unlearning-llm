@@ -8,3 +8,7 @@ stage1_baseline {'forget_req0_6': (0.411, 0.352), 'retain': (0.445, 0.328)}
 qwen_geometry_s1v1_lr6e-06_ctlfix_seed123_wiki {'forget_req0_6': (0.32, 0.304), 'retain': (0.4, 0.312)}
 qwen_geometry_s1v1_lr6e-06_ctlfix_seed42_wiki {'forget_req0_6': (0.143, 0.228), 'retain': (0.245, 0.249)}
 qwen_geometry_s1v1_lr6e-06_ctlfix_seed7_wiki {'forget_req0_6': (0.194, 0.265), 'retain': (0.3, 0.271)}
+qwen_safetystack_s1v1_lr6e-06_ctlfix_seed123_wiki {'forget_req0_6': (0.263, 0.269), 'retain': (0.285, 0.277)}
+qwen_safetystack_s1v1_lr6e-06_ctlfix_seed42_wiki {'forget_req0_6': (0.0, 0.133), 'retain': (0.0, 0.135)}
+qwen_safetystack_s1v1_lr6e-06_ctlfix_seed7_wiki {'forget_req0_6': (0.023, 0.157), 'retain': (0.01, 0.151)}
+GEN DONE

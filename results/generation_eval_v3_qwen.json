@@ -38,5 +38,35 @@
    0.3,
    0.271
   ]
+ },
+ "qwen/qwen_safetystack_s1v1_lr6e-06_ctlfix_seed123_wiki": {
+  "forget_req0_6": [
+   0.263,
+   0.269
+  ],
+  "retain": [
+   0.285,
+   0.277
+  ]
+ },
+ "qwen/qwen_safetystack_s1v1_lr6e-06_ctlfix_seed42_wiki": {
+  "forget_req0_6": [
+   0.0,
+   0.133
+  ],
+  "retain": [
+   0.0,
+   0.135
+  ]
+ },
+ "qwen/qwen_safetystack_s1v1_lr6e-06_ctlfix_seed7_wiki": {
+  "forget_req0_6": [
+   0.023,
+   0.157
+  ],
+  "retain": [
+   0.01,
+   0.151
+  ]
  }
 }
