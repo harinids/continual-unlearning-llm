@@ -1,0 +1,42 @@
+{
+ "gpt2/stage1_baseline": {
+  "forget_req0_6": [
+   0.269,
+   0.284
+  ],
+  "retain": [
+   0.315,
+   0.265
+  ]
+ },
+ "gpt2/gpt2_rmu2_s1v2_lr10x_ctlfix_seed123_wiki": {
+  "forget_req0_6": [
+   0.154,
+   0.129
+  ],
+  "retain": [
+   0.195,
+   0.15
+  ]
+ },
+ "gpt2/gpt2_rmu2_s1v2_lr10x_ctlfix_seed42_wiki": {
+  "forget_req0_6": [
+   0.086,
+   0.184
+  ],
+  "retain": [
+   0.135,
+   0.192
+  ]
+ },
+ "gpt2/gpt2_rmu2_s1v2_lr10x_ctlfix_seed7_wiki": {
+  "forget_req0_6": [
+   0.154,
+   0.172
+  ],
+  "retain": [
+   0.165,
+   0.177
+  ]
+ }
+}

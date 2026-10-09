@@ -1,0 +1,42 @@
+{
+ "gpt2/stage1_baseline": {
+  "forget_req0_6": [
+   0.269,
+   0.284
+  ],
+  "retain": [
+   0.315,
+   0.265
+  ]
+ },
+ "gpt2/gpt2_ewcgafix_lam100000_s1v2_lr1x_ctlfix_seed123_wiki": {
+  "forget_req0_6": [
+   0.063,
+   0.117
+  ],
+  "retain": [
+   0.095,
+   0.125
+  ]
+ },
+ "gpt2/gpt2_ewcgafix_lam100000_s1v2_lr1x_ctlfix_seed42_wiki": {
+  "forget_req0_6": [
+   0.011,
+   0.082
+  ],
+  "retain": [
+   0.015,
+   0.086
+  ]
+ },
+ "gpt2/gpt2_ewcgafix_lam100000_s1v2_lr1x_ctlfix_seed7_wiki": {
+  "forget_req0_6": [
+   0.006,
+   0.09
+  ],
+  "retain": [
+   0.035,
+   0.105
+  ]
+ }
+}
