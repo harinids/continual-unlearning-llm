@@ -42,3 +42,5 @@ trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 [sequential] Intermediate results saved to results/phase1_sequential/persistence_1791625481.json
 [sequential]   CUMULATIVE STOP at request 2: retain 4.43x, eval 4.12x vs original baseline
 [qwen_rmu2_s1v1_lr3x_ctlfix_seed7_wiki] run done in 49.6 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+{'tag': 'qwen_rmu2_s1v1_lr3x_ctlfix_seed7_wiki', 'wikitext2_ppl_before': 23.168673261719935, 'wikitext2_ppl_after': 34.59228956424739, 'rel_change_pct': 49.30630327202179}

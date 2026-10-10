@@ -1,0 +1,6 @@
+{
+  "tag": "qwen_rmu2_s1v1_lr3x_ctlfix_seed7_wiki",
+  "wikitext2_ppl_before": 23.168673261719935,
+  "wikitext2_ppl_after": 34.59228956424739,
+  "rel_change_pct": 49.30630327202179
+}
