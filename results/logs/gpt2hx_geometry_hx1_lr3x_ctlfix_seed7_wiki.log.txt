@@ -1,0 +1,50 @@
+[gpt2hx_geometry_hx1_lr3x_ctlfix_seed7_wiki] method=geometry_aware | patience=5 | lr=3.00e-05 (base 1.00e-05 x3.0) | max_rounds=5 | stage1=results/stage1/gpt2_hx_v1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|██████████| 148/148 [00:00<00:00, 3138.16it/s]
+/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/layer.py:2631: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+  warnings.warn(
+trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
+[transformers] `loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+[sequential] Overall baseline (full forget10 pool): {'forget_ppl': 81.5933451373074, 'retain_ppl': 71.39393738955042, 'eval_ppl': 99.50312433460006, 'forget_exact_match': nan, 'mia_gap': 0.2230073308944709, 'forget_ok': False, 'retain_ok': None}
+
+[sequential] ===== Forget Request 0 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=1000.00) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.998 min=0.996 steps=28 project_update=False
+[sequential]   -- round 2/5 (lambda_ewc=1000.00) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.997 min=0.994 steps=28 project_update=False
+[sequential]   -- round 3/5 (lambda_ewc=700.00) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.995 min=0.987 steps=28 project_update=False
+[sequential]   -- round 4/5 (lambda_ewc=700.28) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.992 min=0.980 steps=28 project_update=False
+[sequential]   -- round 5/5 (lambda_ewc=490.98) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.986 min=0.969 steps=28 project_update=False
+[sequential]   Converged for this request. Moving to next.
+[sequential]   Request 0 final: {'forget_ppl': 112.91613142943316, 'retain_ppl': 72.21723916364085, 'eval_ppl': 101.88853854316389, 'forget_exact_match': nan, 'mia_gap': 0.11050631114414777, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[0][0]: forget_ppl=112.93, forget_exact_match=nan
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791650360.json
+
+[sequential] ===== Forget Request 1 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=492.78) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.991 min=0.973 steps=28 project_update=False
+[sequential]   -- round 2/5 (lambda_ewc=344.95) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.986 min=0.976 steps=28 project_update=False
+[sequential]   -- round 3/5 (lambda_ewc=348.34) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.977 min=0.953 steps=28 project_update=False
+[sequential]   -- round 4/5 (lambda_ewc=247.47) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.960 min=0.920 steps=28 project_update=False
+[sequential]   -- round 5/5 (lambda_ewc=254.51) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.942 min=0.911 steps=28 project_update=False
+[sequential]   Converged for this request. Moving to next.
+[sequential]   Request 1 final: {'forget_ppl': 163.7651778285403, 'retain_ppl': 88.17923119238826, 'eval_ppl': 136.53969248984427, 'forget_exact_match': nan, 'mia_gap': 0.13053976058959993, 'forget_ok': False, 'retain_ok': None}
