@@ -122,3 +122,9 @@ trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
 [sequential]   persistence[4][1]: forget_ppl=1801.51, forget_exact_match=nan
 [sequential]   persistence[4][2]: forget_ppl=1713.65, forget_exact_match=nan
 [sequential]   persistence[4][3]: forget_ppl=1464.42, forget_exact_match=nan
+[sequential]   persistence[4][4]: forget_ppl=1652.51, forget_exact_match=nan
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791649063.json
+[sequential]   CUMULATIVE STOP at request 4: retain 4.32x, eval 7.60x vs original baseline
+[gpt2hx_geometry_hx1_lr2x_ctlfix_seed7_wiki] run done in 25.8 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (287644 > 1024). Running this sequence through the model will result in indexing errors
+{'tag': 'gpt2hx_geometry_hx1_lr2x_ctlfix_seed7_wiki', 'wikitext2_ppl_before': 50.61552981201153, 'wikitext2_ppl_after': 66.56432346632424, 'rel_change_pct': 31.509684307459153}
