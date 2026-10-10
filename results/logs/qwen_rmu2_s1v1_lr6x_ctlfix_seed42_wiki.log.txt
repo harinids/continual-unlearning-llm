@@ -15,3 +15,21 @@ trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 [sequential]   -- round 3/5 (lambda_ewc=609.63) --
 [sequential]   -- round 4/5 (lambda_ewc=551.86) --
 [sequential]   -- round 5/5 (lambda_ewc=510.09) --
+[sequential]   Request 0 final: {'forget_ppl': 4.8873034173817675, 'retain_ppl': 4.640719707760734, 'eval_ppl': 24.068074887090933, 'forget_exact_match': 0.36, 'mia_gap': 1.572495353090894, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[0][0]: forget_ppl=4.89, forget_exact_match=0.36
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791619663.json
+
+[sequential] ===== Forget Request 1 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=566.61) --
+[sequential]   -- round 2/5 (lambda_ewc=585.11) --
+[sequential]   -- round 3/5 (lambda_ewc=1160.62) --
+[sequential]   HARD STOP: retain_ppl drifted 3.16x from original baseline (threshold 3.0x); forget_ppl also drifted 7.69x
+[sequential]   Converged for this request. Moving to next.
+[sequential]   Request 1 final: {'forget_ppl': 35.85787698922962, 'retain_ppl': 14.663262302755314, 'eval_ppl': 48.173875312277026, 'forget_exact_match': 0.12, 'mia_gap': 0.02183405645601022, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[1][0]: forget_ppl=40.40, forget_exact_match=0.12
+[sequential]   persistence[1][1]: forget_ppl=35.88, forget_exact_match=0.12
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791620316.json
+[sequential]   CUMULATIVE STOP at request 1: retain 4.34x, eval 3.95x vs original baseline
+[qwen_rmu2_s1v1_lr6x_ctlfix_seed42_wiki] run done in 28.7 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+{'tag': 'qwen_rmu2_s1v1_lr6x_ctlfix_seed42_wiki', 'wikitext2_ppl_before': 23.168673261719935, 'wikitext2_ppl_after': 31.98519037491886, 'rel_change_pct': 38.05361236530482}

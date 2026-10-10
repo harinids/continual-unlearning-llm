@@ -1,0 +1,20 @@
+[qwen_rmu2_s1v1_lr3x_ctlfix_seed42_wiki] method=rmu | patience=5 | lr=3.00e-05 (base 1.00e-05 x3) | max_rounds=5 | stage1=results/stage1/qwen_tofu_v1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:  92%|█████████▏| 266/290 [00:00<00:00, 2645.09it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 2692.49it/s]
+trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
+[sequential] Overall baseline (full forget10 pool): {'forget_ppl': 3.375079489993842, 'retain_ppl': 3.3789390930792655, 'eval_ppl': 12.209640522251446, 'forget_exact_match': 0.41, 'mia_gap': 1.2976840917880716, 'forget_ok': False, 'retain_ok': None}
+
+[sequential] ===== Forget Request 0 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=1000.00) --
+[sequential]   -- round 2/5 (lambda_ewc=916.09) --
+[sequential]   -- round 3/5 (lambda_ewc=608.07) --
+[sequential]   -- round 4/5 (lambda_ewc=542.22) --
+[sequential]   -- round 5/5 (lambda_ewc=332.64) --
+[sequential]   Request 0 final: {'forget_ppl': 3.816660767800575, 'retain_ppl': 3.856691438236244, 'eval_ppl': 17.479734486719764, 'forget_exact_match': 0.44, 'mia_gap': 1.4546627959052287, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[0][0]: forget_ppl=3.81, forget_exact_match=0.44
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791620444.json
+
+[sequential] ===== Forget Request 1 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=292.14) --
