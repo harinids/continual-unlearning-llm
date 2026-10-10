@@ -18,3 +18,27 @@ trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 
 [sequential] ===== Forget Request 1 (25 examples) =====
 [sequential]   -- round 1/5 (lambda_ewc=292.14) --
+[sequential]   -- round 2/5 (lambda_ewc=173.01) --
+[sequential]   -- round 3/5 (lambda_ewc=154.38) --
+[sequential]   -- round 4/5 (lambda_ewc=100.00) --
+[sequential]   -- round 5/5 (lambda_ewc=92.28) --
+[sequential]   Request 1 final: {'forget_ppl': 4.893213875657567, 'retain_ppl': 4.669594594795235, 'eval_ppl': 24.63686333270444, 'forget_exact_match': 0.24, 'mia_gap': 1.6735953092575073, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[1][0]: forget_ppl=4.72, forget_exact_match=0.32
+[sequential]   persistence[1][1]: forget_ppl=4.89, forget_exact_match=0.24
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791621299.json
+
+[sequential] ===== Forget Request 2 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=100.00) --
+[sequential]   -- round 2/5 (lambda_ewc=89.60) --
+[sequential]   -- round 3/5 (lambda_ewc=100.00) --
+[sequential]   -- round 4/5 (lambda_ewc=126.75) --
+[sequential]   -- round 5/5 (lambda_ewc=198.53) --
+[sequential]   Request 2 final: {'forget_ppl': 28.994450430549755, 'retain_ppl': 11.980083492930387, 'eval_ppl': 44.47135934943803, 'forget_exact_match': 0.16, 'mia_gap': 0.5009561895014163, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[2][0]: forget_ppl=25.04, forget_exact_match=0.08
+[sequential]   persistence[2][1]: forget_ppl=25.79, forget_exact_match=0.12
+[sequential]   persistence[2][2]: forget_ppl=29.00, forget_exact_match=0.16
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791622244.json
+[sequential]   CUMULATIVE STOP at request 2: retain 3.55x, eval 3.64x vs original baseline
+[qwen_rmu2_s1v1_lr3x_ctlfix_seed42_wiki] run done in 46.2 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+{'tag': 'qwen_rmu2_s1v1_lr3x_ctlfix_seed42_wiki', 'wikitext2_ppl_before': 23.168673261719935, 'wikitext2_ppl_after': 30.28941845286864, 'rel_change_pct': 30.734367525972427}
