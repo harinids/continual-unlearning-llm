@@ -108,3 +108,23 @@ trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
 [sequential] Intermediate results saved to results/phase1_sequential/persistence_1791631018.json
 
 [sequential] ===== Forget Request 7 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=117.16) --
+[sequential]   -- round 2/5 (lambda_ewc=117.16) --
+[sequential]   -- round 3/5 (lambda_ewc=100.00) --
+[sequential]   -- round 4/5 (lambda_ewc=127.55) --
+[sequential]   -- round 5/5 (lambda_ewc=186.98) --
+[sequential]   Converged for this request. Moving to next.
+[sequential]   Request 7 final: {'forget_ppl': 319.8946297091441, 'retain_ppl': 237.4772200676917, 'eval_ppl': 383.6135250572609, 'forget_exact_match': nan, 'mia_gap': 0.2987928322383331, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[7][0]: forget_ppl=573.71, forget_exact_match=nan
+[sequential]   persistence[7][1]: forget_ppl=501.24, forget_exact_match=nan
+[sequential]   persistence[7][2]: forget_ppl=498.50, forget_exact_match=nan
+[sequential]   persistence[7][3]: forget_ppl=510.57, forget_exact_match=nan
+[sequential]   persistence[7][4]: forget_ppl=414.82, forget_exact_match=nan
+[sequential]   persistence[7][5]: forget_ppl=486.32, forget_exact_match=nan
+[sequential]   persistence[7][6]: forget_ppl=327.22, forget_exact_match=nan
+[sequential]   persistence[7][7]: forget_ppl=318.85, forget_exact_match=nan
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791631445.json
+[sequential]   CUMULATIVE STOP at request 7: retain 3.40x, eval 4.22x vs original baseline
+[gpt2hx_safetystack_hx1_lr1x_ctlfix_seed123_wiki] run done in 46.4 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (287644 > 1024). Running this sequence through the model will result in indexing errors
+{'tag': 'gpt2hx_safetystack_hx1_lr1x_ctlfix_seed123_wiki', 'wikitext2_ppl_before': 50.61552981201153, 'wikitext2_ppl_after': 58.27809000645993, 'rel_change_pct': 15.138753309325237}
