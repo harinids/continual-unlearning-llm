@@ -1,0 +1,6 @@
+{
+  "tag": "gpt2hx_geometry_hx1_lr1x_ctlfix_seed123_wiki",
+  "wikitext2_ppl_before": 50.61552981201153,
+  "wikitext2_ppl_after": 48.94851063921471,
+  "rel_change_pct": -3.2934934771762903
+}
