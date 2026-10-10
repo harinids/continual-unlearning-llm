@@ -1,0 +1,29 @@
+{
+  "before": {
+    "forget": 253.09462425948234,
+    "retain": 211.29280327190517,
+    "holdout": 249.79776379264638
+  },
+  "after": {
+    "forget": 85.35450174461532,
+    "retain": 73.80967681423513,
+    "holdout": 94.68718604846842
+  },
+  "wikitext2": {
+    "tag": "stage1_gpt2_hx_v1",
+    "wikitext2_ppl_before": 35.48441611861077,
+    "wikitext2_ppl_after": 50.615531231738935,
+    "rel_change_pct": 42.64157838345335
+  },
+  "r": 64,
+  "alpha": 128,
+  "lr": 0.0001,
+  "epochs": 3,
+  "bs": 16,
+  "seed": 0,
+  "targets": [
+    "c_attn",
+    "c_proj",
+    "c_fc"
+  ]
+}
