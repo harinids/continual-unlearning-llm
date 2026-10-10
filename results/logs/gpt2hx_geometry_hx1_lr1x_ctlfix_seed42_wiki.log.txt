@@ -193,3 +193,17 @@ trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
 [sequential]   -- round 5/5 (lambda_ewc=102.22) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
 [geometry] proj_keep (||P g||/||g||) mean=0.869 min=0.790 steps=28 project_update=False
+[sequential]   Converged for this request. Moving to next.
+[sequential]   Request 7 final: {'forget_ppl': 214.3333472531624, 'retain_ppl': 100.22961675219352, 'eval_ppl': 151.49658043819022, 'forget_exact_match': nan, 'mia_gap': 0.35006027494158065, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[7][0]: forget_ppl=129.58, forget_exact_match=nan
+[sequential]   persistence[7][1]: forget_ppl=157.92, forget_exact_match=nan
+[sequential]   persistence[7][2]: forget_ppl=187.28, forget_exact_match=nan
+[sequential]   persistence[7][3]: forget_ppl=142.48, forget_exact_match=nan
+[sequential]   persistence[7][4]: forget_ppl=118.21, forget_exact_match=nan
+[sequential]   persistence[7][5]: forget_ppl=212.76, forget_exact_match=nan
+[sequential]   persistence[7][6]: forget_ppl=195.59, forget_exact_match=nan
+[sequential]   persistence[7][7]: forget_ppl=215.32, forget_exact_match=nan
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791618509.json
+[gpt2hx_geometry_hx1_lr1x_ctlfix_seed42_wiki] run done in 47.2 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (287644 > 1024). Running this sequence through the model will result in indexing errors
+{'tag': 'gpt2hx_geometry_hx1_lr1x_ctlfix_seed42_wiki', 'wikitext2_ppl_before': 50.61552981201153, 'wikitext2_ppl_after': 53.45774085982497, 'rel_change_pct': 5.615294472604648}
