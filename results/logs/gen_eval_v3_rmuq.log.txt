@@ -1,0 +1,13 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating train split:   0%|          | 0/400 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 400/400 [00:00<00:00, 5739.25 examples/s]
+Generating train split:   0%|          | 0/3600 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 3600/3600 [00:00<00:00, 281728.01 examples/s]
+Generating train split:   0%|          | 0/100 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 100/100 [00:00<00:00, 51546.07 examples/s]
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:  74%|███████▍  | 215/290 [00:00<00:00, 2146.57it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 2342.40it/s]
+trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
+stage1_baseline {'forget_req0_6': (0.411, 0.352), 'retain': (0.445, 0.328)}
+qwen_rmu2_s1v1_lr1x_ctlfix_seed123_wiki {'forget_req0_6': (0.229, 0.239), 'retain': (0.27, 0.258)}
+qwen_rmu2_s1v1_lr1x_ctlfix_seed42_wiki {'forget_req0_6': (0.194, 0.228), 'retain': (0.27, 0.249)}
+qwen_rmu2_s1v1_lr1x_ctlfix_seed7_wiki {'forget_req0_6': (0.189, 0.227), 'retain': (0.255, 0.243)}
+GEN DONE

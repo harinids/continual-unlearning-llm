@@ -1,0 +1,24 @@
+[qwen15_geometry_s1v1_lr1.2e-05_ctlfix_seed42_wiki] method=geometry_aware | patience=5 | lr=1.20e-05 (base 2.00e-06 x6) | max_rounds=5 | stage1=results/stage1/qwen15_tofu_v1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  59%|█████▉    | 201/338 [00:00<00:00, 2001.77it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 2265.96it/s]
+trainable params: 2,179,072 || all params: 1,545,893,376 || trainable%: 0.1410
+[sequential] Overall baseline (full forget10 pool): {'forget_ppl': 2.9231530212578107, 'retain_ppl': 2.919580832488578, 'eval_ppl': 9.77747089731018, 'forget_exact_match': 0.415, 'mia_gap': 1.2224465848849368, 'forget_ok': False, 'retain_ok': None}
+
+[sequential] ===== Forget Request 0 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=1000.00) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.999 min=0.996 steps=28 project_update=False
+[sequential]   -- round 2/5 (lambda_ewc=1012.01) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.999 min=0.998 steps=28 project_update=False
+[sequential]   -- round 3/5 (lambda_ewc=718.38) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.998 min=0.995 steps=28 project_update=False
+[sequential]   -- round 4/5 (lambda_ewc=747.17) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.997 min=0.995 steps=28 project_update=False
+[sequential]   -- round 5/5 (lambda_ewc=547.09) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.997 min=0.994 steps=28 project_update=False
