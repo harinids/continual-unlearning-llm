@@ -1,3 +1,3 @@
-started Sun Oct 11 03:04:30 2026
-GPU 0: Tesla T4 (UUID: GPU-3f993d7a-b658-1ffa-3361-8fcd2f1617e2)
-GPU 1: Tesla T4 (UUID: GPU-1ff4c058-25fd-c2e4-efba-bb9b6a0ec297)
+started Sun Oct 11 10:56:50 2026
+GPU 0: Tesla T4 (UUID: GPU-6ecb1c7e-0451-d705-899f-c7029cbe5f49)
+GPU 1: Tesla T4 (UUID: GPU-07164009-1647-0334-7069-207f546b4a12)
