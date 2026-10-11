@@ -1,0 +1,119 @@
+[qwen_rmu2_s1v1_lr1x_ctlfix_seed7_wiki] method=rmu | patience=5 | lr=1.00e-05 (base 1.00e-05 x1.0) | max_rounds=5 | stage1=results/stage1/qwen_tofu_v1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:  91%|█████████ | 263/290 [00:00<00:00, 2624.58it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 2841.52it/s]
+trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
+[sequential] Overall baseline (full forget10 pool): {'forget_ppl': 3.375106146433154, 'retain_ppl': 3.379014069218176, 'eval_ppl': 12.209640522251446, 'forget_exact_match': 0.41, 'mia_gap': 1.300210953217286, 'forget_ok': False, 'retain_ok': None}
+
+[sequential] ===== Forget Request 0 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=1000.00) --
+[sequential]   -- round 2/5 (lambda_ewc=940.00) --
+[sequential]   -- round 3/5 (lambda_ewc=611.94) --
+[sequential]   -- round 4/5 (lambda_ewc=548.35) --
+[sequential]   -- round 5/5 (lambda_ewc=347.86) --
+[sequential]   Request 0 final: {'forget_ppl': 3.1946093742910375, 'retain_ppl': 3.386412817961543, 'eval_ppl': 12.542070550148265, 'forget_exact_match': 0.4, 'mia_gap': 1.4397667941156322, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[0][0]: forget_ppl=3.19, forget_exact_match=0.4
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791670874.json
+
+[sequential] ===== Forget Request 1 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=311.94) --
+[sequential]   -- round 2/5 (lambda_ewc=217.38) --
+[sequential]   -- round 3/5 (lambda_ewc=210.69) --
+[sequential]   -- round 4/5 (lambda_ewc=138.88) --
+[sequential]   -- round 5/5 (lambda_ewc=130.10) --
+[sequential]   Request 1 final: {'forget_ppl': 3.7227129434931134, 'retain_ppl': 3.756989238546033, 'eval_ppl': 16.52501414496854, 'forget_exact_match': 0.32, 'mia_gap': 1.4645204806065821, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[1][0]: forget_ppl=3.52, forget_exact_match=0.44
+[sequential]   persistence[1][1]: forget_ppl=3.72, forget_exact_match=0.32
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791671717.json
+
+[sequential] ===== Forget Request 2 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=100.00) --
+[sequential]   -- round 2/5 (lambda_ewc=88.40) --
+[sequential]   -- round 3/5 (lambda_ewc=100.00) --
+[sequential]   -- round 4/5 (lambda_ewc=86.61) --
+[sequential]   -- round 5/5 (lambda_ewc=100.00) --
+[sequential]   Request 2 final: {'forget_ppl': 4.221935222638072, 'retain_ppl': 3.929429915266445, 'eval_ppl': 18.092010919205165, 'forget_exact_match': 0.4, 'mia_gap': 1.4962884724795165, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[2][0]: forget_ppl=3.68, forget_exact_match=0.44
+[sequential]   persistence[2][1]: forget_ppl=3.88, forget_exact_match=0.36
+[sequential]   persistence[2][2]: forget_ppl=4.22, forget_exact_match=0.4
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791672637.json
+
+[sequential] ===== Forget Request 3 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=84.90) --
+[sequential]   -- round 2/5 (lambda_ewc=100.00) --
+[sequential]   -- round 3/5 (lambda_ewc=75.20) --
+[sequential]   -- round 4/5 (lambda_ewc=100.00) --
+[sequential]   -- round 5/5 (lambda_ewc=70.70) --
+[sequential]   Request 3 final: {'forget_ppl': 4.082252418548396, 'retain_ppl': 4.080350087032208, 'eval_ppl': 19.339396927432148, 'forget_exact_match': 0.52, 'mia_gap': 1.5817660892402732, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[3][0]: forget_ppl=3.86, forget_exact_match=0.44
+[sequential]   persistence[3][1]: forget_ppl=4.06, forget_exact_match=0.32
+[sequential]   persistence[3][2]: forget_ppl=4.41, forget_exact_match=0.4
+[sequential]   persistence[3][3]: forget_ppl=4.08, forget_exact_match=0.52
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791673628.json
+
+[sequential] ===== Forget Request 4 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=100.00) --
+[sequential]   -- round 2/5 (lambda_ewc=75.20) --
+[sequential]   -- round 3/5 (lambda_ewc=100.00) --
+[sequential]   -- round 4/5 (lambda_ewc=74.86) --
+[sequential]   -- round 5/5 (lambda_ewc=100.00) --
+[sequential]   Request 4 final: {'forget_ppl': 4.636436233076784, 'retain_ppl': 4.406726895205915, 'eval_ppl': 21.826160511986807, 'forget_exact_match': 0.36, 'mia_gap': 1.6092393745432843, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[4][0]: forget_ppl=4.21, forget_exact_match=0.36
+[sequential]   persistence[4][1]: forget_ppl=4.50, forget_exact_match=0.24
+[sequential]   persistence[4][2]: forget_ppl=4.91, forget_exact_match=0.4
+[sequential]   persistence[4][3]: forget_ppl=4.54, forget_exact_match=0.52
+[sequential]   persistence[4][4]: forget_ppl=4.64, forget_exact_match=0.36
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791674701.json
+
+[sequential] ===== Forget Request 5 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=73.62) --
+[sequential]   -- round 2/5 (lambda_ewc=100.00) --
+[sequential]   -- round 3/5 (lambda_ewc=78.98) --
+[sequential]   -- round 4/5 (lambda_ewc=100.00) --
+[sequential]   -- round 5/5 (lambda_ewc=79.96) --
+[sequential]   Request 5 final: {'forget_ppl': 5.104169759819118, 'retain_ppl': 5.060389353975773, 'eval_ppl': 25.732243436674345, 'forget_exact_match': 0.24, 'mia_gap': 1.643198203254532, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[5][0]: forget_ppl=4.99, forget_exact_match=0.4
+[sequential]   persistence[5][1]: forget_ppl=5.49, forget_exact_match=0.28
+[sequential]   persistence[5][2]: forget_ppl=6.04, forget_exact_match=0.36
+[sequential]   persistence[5][3]: forget_ppl=5.53, forget_exact_match=0.52
+[sequential]   persistence[5][4]: forget_ppl=5.36, forget_exact_match=0.32
+[sequential]   persistence[5][5]: forget_ppl=5.10, forget_exact_match=0.24
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791675854.json
+
+[sequential] ===== Forget Request 6 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=100.00) --
+[sequential]   -- round 2/5 (lambda_ewc=79.20) --
+[sequential]   -- round 3/5 (lambda_ewc=100.00) --
+[sequential]   -- round 4/5 (lambda_ewc=84.12) --
+[sequential]   -- round 5/5 (lambda_ewc=100.00) --
+[sequential]   Request 6 final: {'forget_ppl': 8.749555137817456, 'retain_ppl': 7.138922193386308, 'eval_ppl': 32.92568782427478, 'forget_exact_match': 0.2, 'mia_gap': 1.2576300311874555, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[6][0]: forget_ppl=7.91, forget_exact_match=0.44
+[sequential]   persistence[6][1]: forget_ppl=8.68, forget_exact_match=0.16
+[sequential]   persistence[6][2]: forget_ppl=9.58, forget_exact_match=0.24
+[sequential]   persistence[6][3]: forget_ppl=8.99, forget_exact_match=0.44
+[sequential]   persistence[6][4]: forget_ppl=8.68, forget_exact_match=0.32
+[sequential]   persistence[6][5]: forget_ppl=7.82, forget_exact_match=0.24
+[sequential]   persistence[6][6]: forget_ppl=8.75, forget_exact_match=0.2
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791677090.json
+
+[sequential] ===== Forget Request 7 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=102.99) --
+[sequential]   -- round 2/5 (lambda_ewc=88.37) --
+[sequential]   -- round 3/5 (lambda_ewc=100.00) --
+[sequential]   -- round 4/5 (lambda_ewc=102.71) --
+[sequential]   -- round 5/5 (lambda_ewc=116.72) --
+[sequential]   Request 7 final: {'forget_ppl': 16.610542071252265, 'retain_ppl': 11.20655247595267, 'eval_ppl': 40.12090428564987, 'forget_exact_match': 0.16, 'mia_gap': 0.7857165362808729, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[7][0]: forget_ppl=17.01, forget_exact_match=0.28
+[sequential]   persistence[7][1]: forget_ppl=17.70, forget_exact_match=0.08
+[sequential]   persistence[7][2]: forget_ppl=19.47, forget_exact_match=0.24
+[sequential]   persistence[7][3]: forget_ppl=17.75, forget_exact_match=0.32
+[sequential]   persistence[7][4]: forget_ppl=16.36, forget_exact_match=0.2
+[sequential]   persistence[7][5]: forget_ppl=16.98, forget_exact_match=0.12
+[sequential]   persistence[7][6]: forget_ppl=17.48, forget_exact_match=0.08
+[sequential]   persistence[7][7]: forget_ppl=16.61, forget_exact_match=0.16
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791678399.json
+[sequential]   CUMULATIVE STOP at request 7: retain 3.32x, eval 3.29x vs original baseline
+[qwen_rmu2_s1v1_lr1x_ctlfix_seed7_wiki] run done in 142.1 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+{'tag': 'qwen_rmu2_s1v1_lr1x_ctlfix_seed7_wiki', 'wikitext2_ppl_before': 23.168673261719935, 'wikitext2_ppl_after': 32.35062486243215, 'rel_change_pct': 39.63089080237903}
