@@ -106,3 +106,19 @@ trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
 [sequential]   -- round 3/5 (lambda_ewc=337.75) --
 [sequential]   -- round 4/5 (lambda_ewc=537.84) --
 [sequential]   -- round 5/5 (lambda_ewc=1036.46) --
+[sequential]   HARD STOP: eval_ppl drifted 3.90x from original baseline (threshold 3.0x); forget_ppl also drifted 5.64x
+[sequential]   Converged for this request. Moving to next.
+[sequential]   Request 7 final: {'forget_ppl': 150.7943261643393, 'retain_ppl': 32.81099520648966, 'eval_ppl': 154.04182782182286, 'forget_exact_match': 0.04, 'mia_gap': 0.004812851056947842, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[7][0]: forget_ppl=107.04, forget_exact_match=0.12
+[sequential]   persistence[7][1]: forget_ppl=197.42, forget_exact_match=0.08
+[sequential]   persistence[7][2]: forget_ppl=147.20, forget_exact_match=0.12
+[sequential]   persistence[7][3]: forget_ppl=159.16, forget_exact_match=0.08
+[sequential]   persistence[7][4]: forget_ppl=144.36, forget_exact_match=0.12
+[sequential]   persistence[7][5]: forget_ppl=118.10, forget_exact_match=0.04
+[sequential]   persistence[7][6]: forget_ppl=118.19, forget_exact_match=0.04
+[sequential]   persistence[7][7]: forget_ppl=150.65, forget_exact_match=0.04
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791767855.json
+[sequential]   CUMULATIVE STOP at request 7: retain 4.23x, eval 7.28x vs original baseline
+[gpt2_graddiff_s1v2_lr1x_ctlfix_seed123_wiki] run done in 49.8 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (287644 > 1024). Running this sequence through the model will result in indexing errors
+{'tag': 'gpt2_graddiff_s1v2_lr1x_ctlfix_seed123_wiki', 'wikitext2_ppl_before': 51.368842703042276, 'wikitext2_ppl_after': 356.80525153223005, 'rel_change_pct': 594.5946857220098}
