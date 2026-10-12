@@ -1,0 +1,52 @@
+{
+ "qwen/stage1_baseline": {
+  "forget_req0_6": [
+   0.411,
+   0.352
+  ],
+  "retain": [
+   0.445,
+   0.328
+  ]
+ },
+ "qwen/qwen_graddiff_s1v1_lr6e-06_ctlfix_seed42_wiki": {
+  "forget_req0_6": [
+   0.234,
+   0.276
+  ],
+  "retain": [
+   0.335,
+   0.287
+  ]
+ },
+ "qwen/qwen_graddiff_s1v1_lr6e-06_ctlfix_seed7_wiki": {
+  "forget_req0_6": [
+   0.263,
+   0.287
+  ],
+  "retain": [
+   0.37,
+   0.291
+  ]
+ },
+ "qwen/qwen_npo_s1v1_lr6e-06_ctlfix_seed42_wiki": {
+  "forget_req0_6": [
+   0.0,
+   0.147
+  ],
+  "retain": [
+   0.0,
+   0.145
+  ]
+ },
+ "qwen/qwen_npo_s1v1_lr6e-06_ctlfix_seed7_wiki": {
+  "forget_req0_6": [
+   0.006,
+   0.122
+  ],
+  "retain": [
+   0.0,
+   0.125
+  ]
+ }
+}
