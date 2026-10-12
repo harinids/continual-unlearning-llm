@@ -101,3 +101,18 @@ trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 [sequential]   -- round 1/5 (lambda_ewc=69.07) --
 [sequential]   -- round 2/5 (lambda_ewc=43.24) --
 [sequential]   -- round 3/5 (lambda_ewc=100.00) --
+[sequential]   -- round 4/5 (lambda_ewc=69.21) --
+[sequential]   -- round 5/5 (lambda_ewc=55.95) --
+[sequential]   Request 7 final: {'forget_ppl': 13.083120254372549, 'retain_ppl': 6.237852186505043, 'eval_ppl': 23.273664009974063, 'forget_exact_match': 0.28, 'mia_gap': 0.5418310113005584, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[7][0]: forget_ppl=13.48, forget_exact_match=0.2
+[sequential]   persistence[7][1]: forget_ppl=13.60, forget_exact_match=0.24
+[sequential]   persistence[7][2]: forget_ppl=13.63, forget_exact_match=0.24
+[sequential]   persistence[7][3]: forget_ppl=14.79, forget_exact_match=0.12
+[sequential]   persistence[7][4]: forget_ppl=17.25, forget_exact_match=0.24
+[sequential]   persistence[7][5]: forget_ppl=12.28, forget_exact_match=0.28
+[sequential]   persistence[7][6]: forget_ppl=17.89, forget_exact_match=0.32
+[sequential]   persistence[7][7]: forget_ppl=13.08, forget_exact_match=0.28
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791781327.json
+[qwen_graddiff_s1v1_lr6e-06_ctlfix_seed42_wiki] run done in 163.7 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+{'tag': 'qwen_graddiff_s1v1_lr6e-06_ctlfix_seed42_wiki', 'wikitext2_ppl_before': 23.168673261719935, 'wikitext2_ppl_after': 31.496178974363488, 'rel_change_pct': 35.94295460328556}
