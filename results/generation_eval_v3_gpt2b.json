@@ -1,0 +1,72 @@
+{
+ "gpt2/stage1_baseline": {
+  "forget_req0_6": [
+   0.269,
+   0.284
+  ],
+  "retain": [
+   0.315,
+   0.265
+  ]
+ },
+ "gpt2/gpt2_graddiff_s1v2_lr1x_ctlfix_seed123_wiki": {
+  "forget_req0_6": [
+   0.086,
+   0.144
+  ],
+  "retain": [
+   0.19,
+   0.165
+  ]
+ },
+ "gpt2/gpt2_graddiff_s1v2_lr1x_ctlfix_seed42_wiki": {
+  "forget_req0_6": [
+   0.029,
+   0.108
+  ],
+  "retain": [
+   0.09,
+   0.115
+  ]
+ },
+ "gpt2/gpt2_graddiff_s1v2_lr1x_ctlfix_seed7_wiki": {
+  "forget_req0_6": [
+   0.046,
+   0.11
+  ],
+  "retain": [
+   0.11,
+   0.139
+  ]
+ },
+ "gpt2/gpt2_npo_s1v2_lr1x_ctlfix_seed123_wiki": {
+  "forget_req0_6": [
+   0.023,
+   0.091
+  ],
+  "retain": [
+   0.03,
+   0.106
+  ]
+ },
+ "gpt2/gpt2_npo_s1v2_lr1x_ctlfix_seed42_wiki": {
+  "forget_req0_6": [
+   0.063,
+   0.125
+  ],
+  "retain": [
+   0.09,
+   0.142
+  ]
+ },
+ "gpt2/gpt2_npo_s1v2_lr1x_ctlfix_seed7_wiki": {
+  "forget_req0_6": [
+   0.0,
+   0.075
+  ],
+  "retain": [
+   0.0,
+   0.074
+  ]
+ }
+}
