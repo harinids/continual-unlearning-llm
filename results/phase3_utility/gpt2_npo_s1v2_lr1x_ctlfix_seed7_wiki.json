@@ -1,0 +1,6 @@
+{
+  "tag": "gpt2_npo_s1v2_lr1x_ctlfix_seed7_wiki",
+  "wikitext2_ppl_before": 51.368842703042276,
+  "wikitext2_ppl_after": 652.5353414490658,
+  "rel_change_pct": 1170.2940286611129
+}
