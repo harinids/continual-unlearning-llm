@@ -1,0 +1,6 @@
+{
+  "tag": "qwen_npo_s1v1_lr6e-06_ctlfix_seed123_wiki",
+  "wikitext2_ppl_before": 23.168673261719935,
+  "wikitext2_ppl_after": 30.699431284737475,
+  "rel_change_pct": 32.504053805532806
+}
