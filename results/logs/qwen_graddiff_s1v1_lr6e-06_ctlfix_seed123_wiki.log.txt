@@ -90,3 +90,29 @@ trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 [sequential]   Request 6 final: {'forget_ppl': 5.484846377909777, 'retain_ppl': 3.9043291346123112, 'eval_ppl': 14.533568115230773, 'forget_exact_match': 0.4, 'mia_gap': 1.0148300587475954, 'forget_ok': False, 'retain_ok': None}
 [sequential]   persistence[6][0]: forget_ppl=5.37, forget_exact_match=0.4
 [sequential]   persistence[6][1]: forget_ppl=6.40, forget_exact_match=0.4
+[sequential]   persistence[6][2]: forget_ppl=6.21, forget_exact_match=0.28
+[sequential]   persistence[6][3]: forget_ppl=6.47, forget_exact_match=0.4
+[sequential]   persistence[6][4]: forget_ppl=6.30, forget_exact_match=0.44
+[sequential]   persistence[6][5]: forget_ppl=5.48, forget_exact_match=0.36
+[sequential]   persistence[6][6]: forget_ppl=5.49, forget_exact_match=0.4
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791874159.json
+
+[sequential] ===== Forget Request 7 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=62.67) --
+[sequential]   -- round 2/5 (lambda_ewc=100.00) --
+[sequential]   -- round 3/5 (lambda_ewc=69.61) --
+[sequential]   -- round 4/5 (lambda_ewc=100.00) --
+[sequential]   -- round 5/5 (lambda_ewc=74.01) --
+[sequential]   Request 7 final: {'forget_ppl': 11.19208271026774, 'retain_ppl': 5.067806352634974, 'eval_ppl': 20.059120343716785, 'forget_exact_match': 0.2, 'mia_gap': 0.6244858568841285, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[7][0]: forget_ppl=9.52, forget_exact_match=0.28
+[sequential]   persistence[7][1]: forget_ppl=12.01, forget_exact_match=0.4
+[sequential]   persistence[7][2]: forget_ppl=11.39, forget_exact_match=0.32
+[sequential]   persistence[7][3]: forget_ppl=10.95, forget_exact_match=0.32
+[sequential]   persistence[7][4]: forget_ppl=12.26, forget_exact_match=0.4
+[sequential]   persistence[7][5]: forget_ppl=10.18, forget_exact_match=0.28
+[sequential]   persistence[7][6]: forget_ppl=10.35, forget_exact_match=0.32
+[sequential]   persistence[7][7]: forget_ppl=11.19, forget_exact_match=0.2
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791875833.json
+[qwen_graddiff_s1v1_lr6e-06_ctlfix_seed123_wiki] run done in 178.3 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+{'tag': 'qwen_graddiff_s1v1_lr6e-06_ctlfix_seed123_wiki', 'wikitext2_ppl_before': 23.168673261719935, 'wikitext2_ppl_after': 28.143090132942564, 'rel_change_pct': 21.470443365617875}
