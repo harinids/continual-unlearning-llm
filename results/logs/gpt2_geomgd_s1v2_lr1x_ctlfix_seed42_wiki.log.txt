@@ -201,3 +201,4 @@ trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
 [sequential] Intermediate results saved to results/phase1_sequential/persistence_1791861826.json
 [gpt2_geomgd_s1v2_lr1x_ctlfix_seed42_wiki] run done in 53.4 min
 [transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (287644 > 1024). Running this sequence through the model will result in indexing errors
+{'tag': 'gpt2_geomgd_s1v2_lr1x_ctlfix_seed42_wiki', 'wikitext2_ppl_before': 51.368842703042276, 'wikitext2_ppl_after': 102.82428183713968, 'rel_change_pct': 100.16857773408626}
