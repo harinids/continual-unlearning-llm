@@ -58,5 +58,25 @@
    0.0,
    0.145
   ]
+ },
+ "qwen/qwen_npo_s1v1_lr6e-06_ctlfix_seed7_wiki": {
+  "forget_req0_6": [
+   0.006,
+   0.122
+  ],
+  "retain": [
+   0.0,
+   0.125
+  ]
+ },
+ "qwen/qwen_randsub_s1v1_lr6e-06_ctlfix_seed123_wiki": {
+  "forget_req0_6": [
+   0.274,
+   0.265
+  ],
+  "retain": [
+   0.26,
+   0.259
+  ]
  }
 }
