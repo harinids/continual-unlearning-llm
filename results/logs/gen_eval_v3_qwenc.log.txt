@@ -5,3 +5,7 @@ Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-
 trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 stage1_baseline {'forget_req0_6': (0.411, 0.352), 'retain': (0.445, 0.328)}
 qwen_graddiff_s1v1_lr6e-06_ctlfix_seed123_wiki {'forget_req0_6': (0.331, 0.3), 'retain': (0.365, 0.303)}
+qwen_graddiff_s1v1_lr6e-06_ctlfix_seed42_wiki {'forget_req0_6': (0.234, 0.276), 'retain': (0.335, 0.287)}
+qwen_graddiff_s1v1_lr6e-06_ctlfix_seed7_wiki {'forget_req0_6': (0.263, 0.287), 'retain': (0.37, 0.291)}
+qwen_npo_s1v1_lr6e-06_ctlfix_seed123_wiki {'forget_req0_6': (0.286, 0.289), 'retain': (0.3, 0.284)}
+qwen_npo_s1v1_lr6e-06_ctlfix_seed42_wiki {'forget_req0_6': (0.0, 0.147), 'retain': (0.0, 0.145)}
