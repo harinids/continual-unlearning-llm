@@ -2,198 +2,146 @@
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
 Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_cutlass_90a.abi3.so
 Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
-Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  58%|█████▊    | 197/338 [00:00<00:00, 1968.13it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 2067.51it/s]
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  78%|███████▊  | 265/338 [00:00<00:00, 2648.90it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 2820.89it/s]
 trainable params: 2,179,072 || all params: 1,545,893,376 || trainable%: 0.1410
-[sequential] Overall baseline (full forget10 pool): {'forget_ppl': 2.9232946821421955, 'retain_ppl': 2.919592961132988, 'eval_ppl': 9.77747089731018, 'forget_exact_match': 0.415, 'mia_gap': 1.2227848603175235, 'forget_ok': False, 'retain_ok': None}
+[sequential] Overall baseline (full forget10 pool): {'forget_ppl': 2.9231894770239903, 'retain_ppl': 2.919658514861494, 'eval_ppl': 9.77747089731018, 'forget_exact_match': 0.415, 'mia_gap': 1.2197327043459965, 'forget_ok': False, 'retain_ok': None}
 
 [sequential] ===== Forget Request 0 (25 examples) =====
 [sequential]   -- round 1/5 (lambda_ewc=1000.00) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.998 min=0.996 steps=28 project_update=False
-[sequential]   -- round 2/5 (lambda_ewc=1012.04) --
+[geometry] proj_keep (||P g||/||g||) mean=0.999 min=0.997 steps=28 project_update=False
+[sequential]   -- round 2/5 (lambda_ewc=1012.01) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.998 min=0.995 steps=28 project_update=False
+[geometry] proj_keep (||P g||/||g||) mean=0.999 min=0.996 steps=28 project_update=False
 [sequential]   -- round 3/5 (lambda_ewc=718.36) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
 [geometry] proj_keep (||P g||/||g||) mean=0.998 min=0.996 steps=28 project_update=False
-[sequential]   -- round 4/5 (lambda_ewc=729.88) --
-[geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.997 min=0.995 steps=28 project_update=False
-[sequential]   -- round 5/5 (lambda_ewc=532.41) --
-[geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.997 min=0.992 steps=28 project_update=False
-[sequential]   Request 0 final: {'forget_ppl': 3.107476440424353, 'retain_ppl': 2.9206175569768713, 'eval_ppl': 9.72134136447555, 'forget_exact_match': 0.24, 'mia_gap': 1.2121603691970908, 'forget_ok': True, 'retain_ok': None}
-[sequential]   persistence[0][0]: forget_ppl=3.11, forget_exact_match=0.24
-[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791718841.json
-
-[sequential] ===== Forget Request 1 (25 examples) =====
-[sequential]   -- round 1/5 (lambda_ewc=557.97) --
-[geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.997 min=0.994 steps=28 project_update=False
-[sequential]   -- round 2/5 (lambda_ewc=374.18) --
-[geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.997 min=0.994 steps=28 project_update=False
-[sequential]   -- round 3/5 (lambda_ewc=363.76) --
+[sequential]   -- round 4/5 (lambda_ewc=729.91) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
 [geometry] proj_keep (||P g||/||g||) mean=0.998 min=0.996 steps=28 project_update=False
-[sequential]   -- round 4/5 (lambda_ewc=246.03) --
+[sequential]   -- round 5/5 (lambda_ewc=532.41) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.998 min=0.995 steps=28 project_update=False
+[sequential]   Request 0 final: {'forget_ppl': 3.1016525161754083, 'retain_ppl': 2.9209085271160307, 'eval_ppl': 9.727801942589032, 'forget_exact_match': 0.24, 'mia_gap': 1.135021929557507, 'forget_ok': True, 'retain_ok': None}
+[sequential]   persistence[0][0]: forget_ppl=3.10, forget_exact_match=0.24
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791954207.json
+
+[sequential] ===== Forget Request 1 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=557.99) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
 [geometry] proj_keep (||P g||/||g||) mean=0.997 min=0.993 steps=28 project_update=False
-[sequential]   -- round 5/5 (lambda_ewc=236.22) --
+[sequential]   -- round 2/5 (lambda_ewc=374.19) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.996 min=0.990 steps=28 project_update=False
-[sequential]   Request 1 final: {'forget_ppl': 3.1371555325983858, 'retain_ppl': 2.9258516421694036, 'eval_ppl': 9.570226239897973, 'forget_exact_match': 0.36, 'mia_gap': 1.145159021838681, 'forget_ok': False, 'retain_ok': None}
-[sequential]   persistence[1][0]: forget_ppl=3.17, forget_exact_match=0.28
-[sequential]   persistence[1][1]: forget_ppl=3.14, forget_exact_match=0.36
-[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791721088.json
+[geometry] proj_keep (||P g||/||g||) mean=0.998 min=0.994 steps=28 project_update=False
+[sequential]   -- round 3/5 (lambda_ewc=354.80) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.997 min=0.994 steps=28 project_update=False
+[sequential]   -- round 4/5 (lambda_ewc=238.96) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.997 min=0.994 steps=28 project_update=False
+[sequential]   -- round 5/5 (lambda_ewc=228.50) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.997 min=0.992 steps=28 project_update=False
+[sequential]   Request 1 final: {'forget_ppl': 3.132520869347362, 'retain_ppl': 2.92616271796972, 'eval_ppl': 9.558563396824924, 'forget_exact_match': 0.36, 'mia_gap': 1.147484167591556, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[1][0]: forget_ppl=3.16, forget_exact_match=0.28
+[sequential]   persistence[1][1]: forget_ppl=3.13, forget_exact_match=0.36
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791956527.json
 
 [sequential] ===== Forget Request 2 (25 examples) =====
-[sequential]   -- round 1/5 (lambda_ewc=157.79) --
+[sequential]   -- round 1/5 (lambda_ewc=152.00) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.997 min=0.991 steps=28 project_update=False
-[sequential]   -- round 2/5 (lambda_ewc=145.79) --
+[geometry] proj_keep (||P g||/||g||) mean=0.997 min=0.994 steps=28 project_update=False
+[sequential]   -- round 2/5 (lambda_ewc=139.84) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.996 min=0.993 steps=28 project_update=False
+[geometry] proj_keep (||P g||/||g||) mean=0.996 min=0.988 steps=28 project_update=False
 [sequential]   -- round 3/5 (lambda_ewc=100.00) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.996 min=0.987 steps=28 project_update=False
-[sequential]   -- round 4/5 (lambda_ewc=90.45) --
+[geometry] proj_keep (||P g||/||g||) mean=0.997 min=0.993 steps=28 project_update=False
+[sequential]   -- round 4/5 (lambda_ewc=90.05) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.995 min=0.990 steps=28 project_update=False
+[geometry] proj_keep (||P g||/||g||) mean=0.996 min=0.991 steps=28 project_update=False
 [sequential]   -- round 5/5 (lambda_ewc=100.00) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.995 min=0.982 steps=28 project_update=False
-[sequential]   Request 2 final: {'forget_ppl': 3.4234326614527197, 'retain_ppl': 2.942050759678945, 'eval_ppl': 9.38404908429249, 'forget_exact_match': 0.4, 'mia_gap': 1.061172536441258, 'forget_ok': False, 'retain_ok': None}
-[sequential]   persistence[2][0]: forget_ppl=3.29, forget_exact_match=0.24
-[sequential]   persistence[2][1]: forget_ppl=3.26, forget_exact_match=0.36
+[geometry] proj_keep (||P g||/||g||) mean=0.996 min=0.989 steps=28 project_update=False
+[sequential]   Request 2 final: {'forget_ppl': 3.42236886359523, 'retain_ppl': 2.94398848046039, 'eval_ppl': 9.336460701262135, 'forget_exact_match': 0.4, 'mia_gap': 1.0313880810370812, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[2][0]: forget_ppl=3.28, forget_exact_match=0.28
+[sequential]   persistence[2][1]: forget_ppl=3.25, forget_exact_match=0.36
 [sequential]   persistence[2][2]: forget_ppl=3.42, forget_exact_match=0.4
-[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791723526.json
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791959058.json
 
 [sequential] ===== Forget Request 3 (25 examples) =====
-[sequential]   -- round 1/5 (lambda_ewc=88.49) --
+[sequential]   -- round 1/5 (lambda_ewc=88.11) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.991 min=0.973 steps=28 project_update=False
+[geometry] proj_keep (||P g||/||g||) mean=0.990 min=0.983 steps=28 project_update=False
 [sequential]   -- round 2/5 (lambda_ewc=100.00) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.992 min=0.983 steps=28 project_update=False
-[sequential]   -- round 3/5 (lambda_ewc=95.03) --
+[geometry] proj_keep (||P g||/||g||) mean=0.985 min=0.965 steps=28 project_update=False
+[sequential]   -- round 3/5 (lambda_ewc=94.63) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.992 min=0.975 steps=28 project_update=False
+[geometry] proj_keep (||P g||/||g||) mean=0.985 min=0.958 steps=28 project_update=False
 [sequential]   -- round 4/5 (lambda_ewc=100.00) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.976 min=0.955 steps=28 project_update=False
-[sequential]   -- round 5/5 (lambda_ewc=95.54) --
+[geometry] proj_keep (||P g||/||g||) mean=0.983 min=0.960 steps=28 project_update=False
+[sequential]   -- round 5/5 (lambda_ewc=95.23) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.982 min=0.950 steps=28 project_update=False
-[sequential]   Request 3 final: {'forget_ppl': 3.7795244981499203, 'retain_ppl': 3.035653600244972, 'eval_ppl': 9.509942570611429, 'forget_exact_match': 0.28, 'mia_gap': 0.9445812767678563, 'forget_ok': True, 'retain_ok': None}
+[geometry] proj_keep (||P g||/||g||) mean=0.981 min=0.972 steps=28 project_update=False
+[sequential]   Request 3 final: {'forget_ppl': 3.8033138791085417, 'retain_ppl': 3.0453832225410644, 'eval_ppl': 9.447299103096046, 'forget_exact_match': 0.28, 'mia_gap': 0.9930227195823587, 'forget_ok': True, 'retain_ok': None}
 [sequential]   persistence[3][0]: forget_ppl=3.61, forget_exact_match=0.24
-[sequential]   persistence[3][1]: forget_ppl=3.56, forget_exact_match=0.36
-[sequential]   persistence[3][2]: forget_ppl=3.81, forget_exact_match=0.32
-[sequential]   persistence[3][3]: forget_ppl=3.78, forget_exact_match=0.28
-[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791726138.json
+[sequential]   persistence[3][1]: forget_ppl=3.57, forget_exact_match=0.36
+[sequential]   persistence[3][2]: forget_ppl=3.83, forget_exact_match=0.36
+[sequential]   persistence[3][3]: forget_ppl=3.80, forget_exact_match=0.28
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791961778.json
 
 [sequential] ===== Forget Request 4 (25 examples) =====
 [sequential]   -- round 1/5 (lambda_ewc=100.00) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.978 min=0.964 steps=28 project_update=False
-[sequential]   -- round 2/5 (lambda_ewc=83.60) --
+[geometry] proj_keep (||P g||/||g||) mean=0.980 min=0.965 steps=28 project_update=False
+[sequential]   -- round 2/5 (lambda_ewc=85.60) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.975 min=0.953 steps=28 project_update=False
+[geometry] proj_keep (||P g||/||g||) mean=0.969 min=0.951 steps=28 project_update=False
 [sequential]   -- round 3/5 (lambda_ewc=100.00) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.966 min=0.939 steps=28 project_update=False
-[sequential]   -- round 4/5 (lambda_ewc=80.81) --
+[geometry] proj_keep (||P g||/||g||) mean=0.959 min=0.922 steps=28 project_update=False
+[sequential]   -- round 4/5 (lambda_ewc=83.69) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.943 min=0.906 steps=28 project_update=False
+[geometry] proj_keep (||P g||/||g||) mean=0.954 min=0.912 steps=28 project_update=False
 [sequential]   -- round 5/5 (lambda_ewc=100.00) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.953 min=0.909 steps=28 project_update=False
-[sequential]   Request 4 final: {'forget_ppl': 5.009446466902598, 'retain_ppl': 3.288887884896383, 'eval_ppl': 10.411534864135497, 'forget_exact_match': 0.44, 'mia_gap': 0.7084872578526591, 'forget_ok': False, 'retain_ok': None}
-[sequential]   persistence[4][0]: forget_ppl=4.66, forget_exact_match=0.24
-[sequential]   persistence[4][1]: forget_ppl=4.48, forget_exact_match=0.36
-[sequential]   persistence[4][2]: forget_ppl=5.02, forget_exact_match=0.32
-[sequential]   persistence[4][3]: forget_ppl=4.81, forget_exact_match=0.28
-[sequential]   persistence[4][4]: forget_ppl=5.01, forget_exact_match=0.44
-[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791728935.json
+[geometry] proj_keep (||P g||/||g||) mean=0.918 min=0.861 steps=28 project_update=False
+[sequential]   Request 4 final: {'forget_ppl': 5.0877762566210745, 'retain_ppl': 3.3398188409475864, 'eval_ppl': 10.0978747673508, 'forget_exact_match': 0.44, 'mia_gap': 0.7719008293780651, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[4][0]: forget_ppl=4.68, forget_exact_match=0.24
+[sequential]   persistence[4][1]: forget_ppl=4.49, forget_exact_match=0.36
+[sequential]   persistence[4][2]: forget_ppl=5.03, forget_exact_match=0.28
+[sequential]   persistence[4][3]: forget_ppl=4.88, forget_exact_match=0.28
+[sequential]   persistence[4][4]: forget_ppl=5.09, forget_exact_match=0.44
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791964680.json
 
 [sequential] ===== Forget Request 5 (25 examples) =====
-[sequential]   -- round 1/5 (lambda_ewc=80.09) --
+[sequential]   -- round 1/5 (lambda_ewc=81.30) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.913 min=0.862 steps=28 project_update=False
-[sequential]   -- round 2/5 (lambda_ewc=65.83) --
+[geometry] proj_keep (||P g||/||g||) mean=0.908 min=0.860 steps=28 project_update=False
+[sequential]   -- round 2/5 (lambda_ewc=65.85) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.887 min=0.788 steps=28 project_update=False
+[geometry] proj_keep (||P g||/||g||) mean=0.857 min=0.782 steps=28 project_update=False
 [sequential]   -- round 3/5 (lambda_ewc=100.00) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.914 min=0.865 steps=28 project_update=False
-[sequential]   -- round 4/5 (lambda_ewc=83.74) --
+[geometry] proj_keep (||P g||/||g||) mean=0.837 min=0.769 steps=28 project_update=False
+[sequential]   -- round 4/5 (lambda_ewc=81.24) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.851 min=0.786 steps=28 project_update=False
-[sequential]   -- round 5/5 (lambda_ewc=70.44) --
+[geometry] proj_keep (||P g||/||g||) mean=0.802 min=0.721 steps=28 project_update=False
+[sequential]   -- round 5/5 (lambda_ewc=65.47) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.807 min=0.739 steps=28 project_update=False
-[sequential]   Request 5 final: {'forget_ppl': 7.408945903037025, 'retain_ppl': 4.041783964307906, 'eval_ppl': 12.933079353853204, 'forget_exact_match': 0.36, 'mia_gap': 0.584880861607227, 'forget_ok': False, 'retain_ok': None}
-[sequential]   persistence[5][0]: forget_ppl=7.35, forget_exact_match=0.24
-[sequential]   persistence[5][1]: forget_ppl=6.85, forget_exact_match=0.36
-[sequential]   persistence[5][2]: forget_ppl=8.00, forget_exact_match=0.2
-[sequential]   persistence[5][3]: forget_ppl=7.48, forget_exact_match=0.28
-[sequential]   persistence[5][4]: forget_ppl=8.81, forget_exact_match=0.44
-[sequential]   persistence[5][5]: forget_ppl=7.41, forget_exact_match=0.36
-[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791731919.json
+[geometry] proj_keep (||P g||/||g||) mean=0.786 min=0.673 steps=28 project_update=False
+[sequential]   Request 5 final: {'forget_ppl': 7.333322117588155, 'retain_ppl': 4.071311433151159, 'eval_ppl': 12.142371098805809, 'forget_exact_match': 0.4, 'mia_gap': 0.5083778900104563, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[5][0]: forget_ppl=7.23, forget_exact_match=0.24
+[sequential]   persistence[5][1]: forget_ppl=6.74, forget_exact_match=0.36
+[sequential]   persistence[5][2]: forget_ppl=7.79, forget_exact_match=0.2
+[sequential]   persistence[5][3]: forget_ppl=7.37, forget_exact_match=0.28
+[sequential]   persistence[5][4]: forget_ppl=8.73, forget_exact_match=0.44
+[sequential]   persistence[5][5]: forget_ppl=7.33, forget_exact_match=0.4
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791967782.json
 
 [sequential] ===== Forget Request 6 (25 examples) =====
-[sequential]   -- round 1/5 (lambda_ewc=61.11) --
+[sequential]   -- round 1/5 (lambda_ewc=54.65) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.806 min=0.742 steps=28 project_update=False
-[sequential]   -- round 2/5 (lambda_ewc=46.94) --
-[geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.804 min=0.720 steps=28 project_update=False
-[sequential]   -- round 3/5 (lambda_ewc=38.55) --
-[geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.781 min=0.704 steps=28 project_update=False
-[sequential]   -- round 4/5 (lambda_ewc=34.46) --
-[geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.717 min=0.647 steps=28 project_update=False
-[sequential]   -- round 5/5 (lambda_ewc=33.16) --
-[geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.687 min=0.607 steps=28 project_update=False
-[sequential]   Request 6 final: {'forget_ppl': 38.672930545032564, 'retain_ppl': 6.13084351552903, 'eval_ppl': 22.036741918052222, 'forget_exact_match': 0.32, 'mia_gap': 0.5562055058531707, 'forget_ok': False, 'retain_ok': None}
-[sequential]   persistence[6][0]: forget_ppl=17.88, forget_exact_match=0.2
-[sequential]   persistence[6][1]: forget_ppl=18.66, forget_exact_match=0.32
-[sequential]   persistence[6][2]: forget_ppl=20.85, forget_exact_match=0.16
-[sequential]   persistence[6][3]: forget_ppl=18.67, forget_exact_match=0.28
-[sequential]   persistence[6][4]: forget_ppl=28.70, forget_exact_match=0.28
-[sequential]   persistence[6][5]: forget_ppl=18.16, forget_exact_match=0.32
-[sequential]   persistence[6][6]: forget_ppl=38.61, forget_exact_match=0.32
-[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791735088.json
-
-[sequential] ===== Forget Request 7 (25 examples) =====
-[sequential]   -- round 1/5 (lambda_ewc=35.12) --
-[geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.673 min=0.568 steps=28 project_update=False
-[sequential]   -- round 2/5 (lambda_ewc=29.57) --
-[geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.644 min=0.541 steps=28 project_update=False
-[sequential]   -- round 3/5 (lambda_ewc=31.71) --
-[geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.627 min=0.495 steps=28 project_update=False
-[sequential]   -- round 4/5 (lambda_ewc=39.46) --
-[geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.607 min=0.497 steps=28 project_update=False
-[sequential]   -- round 5/5 (lambda_ewc=58.93) --
-[geometry] Fitting retain subspace (k=10, samples=16)...
-[geometry] proj_keep (||P g||/||g||) mean=0.618 min=0.534 steps=28 project_update=False
-[sequential]   Request 7 final: {'forget_ppl': 150.28150737894123, 'retain_ppl': 16.123959329315422, 'eval_ppl': 47.23931687593452, 'forget_exact_match': 0.12, 'mia_gap': 0.8434602821266255, 'forget_ok': True, 'retain_ok': None}
-[sequential]   persistence[7][0]: forget_ppl=104.29, forget_exact_match=0.16
-[sequential]   persistence[7][1]: forget_ppl=109.41, forget_exact_match=0.24
-[sequential]   persistence[7][2]: forget_ppl=121.75, forget_exact_match=0.16
-[sequential]   persistence[7][3]: forget_ppl=113.95, forget_exact_match=0.12
-[sequential]   persistence[7][4]: forget_ppl=193.49, forget_exact_match=0.36
-[sequential]   persistence[7][5]: forget_ppl=99.44, forget_exact_match=0.24
-[sequential]   persistence[7][6]: forget_ppl=306.63, forget_exact_match=0.24
-[sequential]   persistence[7][7]: forget_ppl=150.18, forget_exact_match=0.12
-[sequential] Intermediate results saved to results/phase1_sequential/persistence_1791738443.json
-[sequential]   CUMULATIVE STOP at request 7: retain 5.52x, eval 4.83x vs original baseline
-[qwen15_geometry_s1v1_lr8e-06_ctlfix_seed42_wiki] run done in 369.6 min
-[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
-{'tag': 'qwen15_geometry_s1v1_lr8e-06_ctlfix_seed42_wiki', 'wikitext2_ppl_before': 15.305243134788338, 'wikitext2_ppl_after': 28.27652409345381, 'rel_change_pct': 84.75057105876454}
+[geometry] proj_keep (||P g||/||g||) mean=0.826 min=0.761 steps=28 project_update=False
