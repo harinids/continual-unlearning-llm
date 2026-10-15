@@ -4,3 +4,8 @@ Failed to load /usr/local/lib/python3.13/dist-packages/torchao/_C_mxfp8.cpython-
 Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  74%|███████▎  | 249/338 [00:00<00:00, 2485.52it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 2568.13it/s]
 trainable params: 2,179,072 || all params: 1,545,893,376 || trainable%: 0.1410
 stage1_baseline {'forget_req0_6': (0.417, 0.362), 'retain': (0.455, 0.342)}
+qwen15_geometry_s1v1_lr1.2e-05_ctlfix_seed42_wiki {'forget_req0_6': (0.229, 0.228), 'retain': (0.305, 0.259)}
+qwen15_geometry_s1v1_lr1.8e-05_ctlfix_seed42_wiki {'forget_req0_6': (0.263, 0.255), 'retain': (0.33, 0.27)}
+qwen15_geometry_s1v1_lr1e-05_ctlfix_seed42_wiki {'forget_req0_6': (0.257, 0.253), 'retain': (0.33, 0.272)}
+qwen15_geometry_s1v1_lr6e-06_ctlfix_seed42_wiki {'forget_req0_6': (0.297, 0.295), 'retain': (0.435, 0.316)}
+qwen15_geometry_s1v1_lr8e-06_ctlfix_seed42_wiki {'forget_req0_6': (0.189, 0.223), 'retain': (0.3, 0.271)}

@@ -8,5 +8,55 @@
    0.455,
    0.342
   ]
+ },
+ "qwen15/qwen15_geometry_s1v1_lr1.2e-05_ctlfix_seed42_wiki": {
+  "forget_req0_6": [
+   0.229,
+   0.228
+  ],
+  "retain": [
+   0.305,
+   0.259
+  ]
+ },
+ "qwen15/qwen15_geometry_s1v1_lr1.8e-05_ctlfix_seed42_wiki": {
+  "forget_req0_6": [
+   0.263,
+   0.255
+  ],
+  "retain": [
+   0.33,
+   0.27
+  ]
+ },
+ "qwen15/qwen15_geometry_s1v1_lr1e-05_ctlfix_seed42_wiki": {
+  "forget_req0_6": [
+   0.257,
+   0.253
+  ],
+  "retain": [
+   0.33,
+   0.272
+  ]
+ },
+ "qwen15/qwen15_geometry_s1v1_lr6e-06_ctlfix_seed42_wiki": {
+  "forget_req0_6": [
+   0.297,
+   0.295
+  ],
+  "retain": [
+   0.435,
+   0.316
+  ]
+ },
+ "qwen15/qwen15_geometry_s1v1_lr8e-06_ctlfix_seed42_wiki": {
+  "forget_req0_6": [
+   0.189,
+   0.223
+  ],
+  "retain": [
+   0.3,
+   0.271
+  ]
  }
 }
