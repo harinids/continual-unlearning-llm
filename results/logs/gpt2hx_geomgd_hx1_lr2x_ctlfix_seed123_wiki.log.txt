@@ -144,3 +144,13 @@ trainable params: 811,008 || all params: 125,250,816 || trainable%: 0.6475
 [sequential]   Converged for this request. Moving to next.
 [sequential]   Request 5 final: {'forget_ppl': 1049.329922071158, 'retain_ppl': 150.62447396707242, 'eval_ppl': 318.5571606940451, 'forget_exact_match': nan, 'mia_gap': 1.1880130468096048, 'forget_ok': False, 'retain_ok': None}
 [sequential]   persistence[5][0]: forget_ppl=724.96, forget_exact_match=nan
+[sequential]   persistence[5][1]: forget_ppl=553.70, forget_exact_match=nan
+[sequential]   persistence[5][2]: forget_ppl=573.20, forget_exact_match=nan
+[sequential]   persistence[5][3]: forget_ppl=606.28, forget_exact_match=nan
+[sequential]   persistence[5][4]: forget_ppl=573.64, forget_exact_match=nan
+[sequential]   persistence[5][5]: forget_ppl=1044.04, forget_exact_match=nan
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1792049142.json
+[sequential]   CUMULATIVE STOP at request 5: retain 2.16x, eval 3.51x vs original baseline
+[gpt2hx_geomgd_hx1_lr2x_ctlfix_seed123_wiki] run done in 39.1 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (287644 > 1024). Running this sequence through the model will result in indexing errors
+{'tag': 'gpt2hx_geomgd_hx1_lr2x_ctlfix_seed123_wiki', 'wikitext2_ppl_before': 50.61552981201153, 'wikitext2_ppl_after': 66.40057284879691, 'rel_change_pct': 31.186165778392084}
