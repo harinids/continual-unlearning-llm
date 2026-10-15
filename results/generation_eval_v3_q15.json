@@ -58,5 +58,15 @@
    0.3,
    0.271
   ]
+ },
+ "qwen15/qwen15_safetystack_s1v1_lr6e-06_ctlfix_seed7_wiki": {
+  "forget_req0_6": [
+   0.074,
+   0.19
+  ],
+  "retain": [
+   0.145,
+   0.211
+  ]
  }
 }
