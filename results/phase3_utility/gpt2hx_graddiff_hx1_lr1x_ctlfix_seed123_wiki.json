@@ -1,0 +1,6 @@
+{
+  "tag": "gpt2hx_graddiff_hx1_lr1x_ctlfix_seed123_wiki",
+  "wikitext2_ppl_before": 50.61552981201153,
+  "wikitext2_ppl_after": 49.10247015293197,
+  "rel_change_pct": -2.98931901868682
+}
