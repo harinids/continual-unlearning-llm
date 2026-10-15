@@ -1,0 +1,42 @@
+{
+ "gpt2/stage1_baseline": {
+  "forget_req0_6": [
+   0.269,
+   0.284
+  ],
+  "retain": [
+   0.315,
+   0.265
+  ]
+ },
+ "gpt2/gpt2_geomgd_s1v2_lr2x_ctlfix_seed123_wiki": {
+  "forget_req0_6": [
+   0.034,
+   0.136
+  ],
+  "retain": [
+   0.155,
+   0.172
+  ]
+ },
+ "gpt2/gpt2_geomgd_s1v2_lr2x_ctlfix_seed42_wiki": {
+  "forget_req0_6": [
+   0.034,
+   0.134
+  ],
+  "retain": [
+   0.095,
+   0.166
+  ]
+ },
+ "gpt2/gpt2_geomgd_s1v2_lr2x_ctlfix_seed7_wiki": {
+  "forget_req0_6": [
+   0.051,
+   0.133
+  ],
+  "retain": [
+   0.175,
+   0.181
+  ]
+ }
+}
