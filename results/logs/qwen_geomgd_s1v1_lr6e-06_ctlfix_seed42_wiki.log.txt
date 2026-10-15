@@ -158,3 +158,41 @@ trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 [geometry] Fitting retain subspace (k=10, samples=16)...
 [geometry] proj_keep (||P g||/||g||) mean=0.938 min=0.890 steps=28 project_update=False
 [sequential]   Request 6 final: {'forget_ppl': 6.527514043865242, 'retain_ppl': 3.7972555431470774, 'eval_ppl': 14.389425685157654, 'forget_exact_match': 0.4, 'mia_gap': 0.914892437693837, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[6][0]: forget_ppl=5.71, forget_exact_match=0.28
+[sequential]   persistence[6][1]: forget_ppl=5.65, forget_exact_match=0.28
+[sequential]   persistence[6][2]: forget_ppl=6.04, forget_exact_match=0.32
+[sequential]   persistence[6][3]: forget_ppl=5.93, forget_exact_match=0.24
+[sequential]   persistence[6][4]: forget_ppl=6.52, forget_exact_match=0.44
+[sequential]   persistence[6][5]: forget_ppl=5.37, forget_exact_match=0.32
+[sequential]   persistence[6][6]: forget_ppl=6.53, forget_exact_match=0.4
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1792047286.json
+
+[sequential] ===== Forget Request 7 (25 examples) =====
+[sequential]   -- round 1/5 (lambda_ewc=65.65) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.967 min=0.923 steps=28 project_update=False
+[sequential]   -- round 2/5 (lambda_ewc=41.88) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.969 min=0.925 steps=28 project_update=False
+[sequential]   -- round 3/5 (lambda_ewc=100.00) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.960 min=0.917 steps=28 project_update=False
+[sequential]   -- round 4/5 (lambda_ewc=63.07) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.952 min=0.910 steps=28 project_update=False
+[sequential]   -- round 5/5 (lambda_ewc=100.00) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.946 min=0.882 steps=28 project_update=False
+[sequential]   Request 7 final: {'forget_ppl': 7.322168481340706, 'retain_ppl': 4.154550683960017, 'eval_ppl': 16.874159695098253, 'forget_exact_match': 0.32, 'mia_gap': 0.787505785187522, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[7][0]: forget_ppl=7.61, forget_exact_match=0.28
+[sequential]   persistence[7][1]: forget_ppl=7.64, forget_exact_match=0.28
+[sequential]   persistence[7][2]: forget_ppl=7.82, forget_exact_match=0.36
+[sequential]   persistence[7][3]: forget_ppl=7.91, forget_exact_match=0.24
+[sequential]   persistence[7][4]: forget_ppl=9.26, forget_exact_match=0.48
+[sequential]   persistence[7][5]: forget_ppl=7.02, forget_exact_match=0.28
+[sequential]   persistence[7][6]: forget_ppl=9.42, forget_exact_match=0.36
+[sequential]   persistence[7][7]: forget_ppl=7.32, forget_exact_match=0.32
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1792048775.json
+[qwen_geomgd_s1v1_lr6e-06_ctlfix_seed42_wiki] run done in 166.1 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+{'tag': 'qwen_geomgd_s1v1_lr6e-06_ctlfix_seed42_wiki', 'wikitext2_ppl_before': 23.168673261719935, 'wikitext2_ppl_after': 28.204208829234574, 'rel_change_pct': 21.73424222713054}
