@@ -177,3 +177,22 @@ trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
 [sequential]   -- round 3/5 (lambda_ewc=66.76) --
 [geometry] Fitting retain subspace (k=10, samples=16)...
 [geometry] proj_keep (||P g||/||g||) mean=0.940 min=0.874 steps=28 project_update=False
+[sequential]   -- round 4/5 (lambda_ewc=100.00) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.942 min=0.894 steps=28 project_update=False
+[sequential]   -- round 5/5 (lambda_ewc=66.39) --
+[geometry] Fitting retain subspace (k=10, samples=16)...
+[geometry] proj_keep (||P g||/||g||) mean=0.923 min=0.854 steps=28 project_update=False
+[sequential]   Request 7 final: {'forget_ppl': 7.976613373748575, 'retain_ppl': 4.171508266228194, 'eval_ppl': 15.151885463173034, 'forget_exact_match': 0.44, 'mia_gap': 0.712465899331229, 'forget_ok': False, 'retain_ok': None}
+[sequential]   persistence[7][0]: forget_ppl=6.63, forget_exact_match=0.32
+[sequential]   persistence[7][1]: forget_ppl=7.59, forget_exact_match=0.24
+[sequential]   persistence[7][2]: forget_ppl=8.15, forget_exact_match=0.36
+[sequential]   persistence[7][3]: forget_ppl=8.33, forget_exact_match=0.44
+[sequential]   persistence[7][4]: forget_ppl=7.06, forget_exact_match=0.28
+[sequential]   persistence[7][5]: forget_ppl=7.18, forget_exact_match=0.16
+[sequential]   persistence[7][6]: forget_ppl=7.15, forget_exact_match=0.28
+[sequential]   persistence[7][7]: forget_ppl=7.98, forget_exact_match=0.44
+[sequential] Intermediate results saved to results/phase1_sequential/persistence_1792060429.json
+[qwen_geomgd_s1v1_lr6e-06_ctlfix_seed7_wiki] run done in 186.5 min
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+{'tag': 'qwen_geomgd_s1v1_lr6e-06_ctlfix_seed7_wiki', 'wikitext2_ppl_before': 23.168673261719935, 'wikitext2_ppl_after': 27.69636316256416, 'rel_change_pct': 19.542292515838746}
