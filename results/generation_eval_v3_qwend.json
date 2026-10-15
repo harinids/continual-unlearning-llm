@@ -1,0 +1,42 @@
+{
+ "qwen/stage1_baseline": {
+  "forget_req0_6": [
+   0.411,
+   0.352
+  ],
+  "retain": [
+   0.445,
+   0.328
+  ]
+ },
+ "qwen/qwen_randsub_s1v1_lr6e-06_ctlfix_seed123_wiki": {
+  "forget_req0_6": [
+   0.274,
+   0.265
+  ],
+  "retain": [
+   0.26,
+   0.259
+  ]
+ },
+ "qwen/qwen_randsub_s1v1_lr6e-06_ctlfix_seed42_wiki": {
+  "forget_req0_6": [
+   0.0,
+   0.136
+  ],
+  "retain": [
+   0.0,
+   0.137
+  ]
+ },
+ "qwen/qwen_randsub_s1v1_lr6e-06_ctlfix_seed7_wiki": {
+  "forget_req0_6": [
+   0.0,
+   0.109
+  ],
+  "retain": [
+   0.0,
+   0.107
+  ]
+ }
+}
