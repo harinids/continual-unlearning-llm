@@ -1,0 +1,6 @@
+{
+  "tag": "qwen_graddiff_s1v1_lr8e-06_ctlfix_seed42_wiki",
+  "wikitext2_ppl_before": 23.168673261719935,
+  "wikitext2_ppl_after": 41.5966575050044,
+  "rel_change_pct": 79.5383664619752
+}
