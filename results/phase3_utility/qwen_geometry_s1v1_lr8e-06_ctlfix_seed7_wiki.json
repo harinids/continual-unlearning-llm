@@ -1,0 +1,6 @@
+{
+  "tag": "qwen_geometry_s1v1_lr8e-06_ctlfix_seed7_wiki",
+  "wikitext2_ppl_before": 23.168673261719935,
+  "wikitext2_ppl_after": 42.287334153316415,
+  "rel_change_pct": 82.51944630418255
+}
