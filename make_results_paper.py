@@ -38,6 +38,7 @@ GROUPS = {
   "Geometry (ours), lr 8e-6": "qwen15_geometry_s1v1_lr8e-06_ctlfix_seed*_wiki",
   "Geometry (ours), lr 1e-5": "qwen15_geometry_s1v1_lr1e-05_ctlfix_seed*_wiki",
   "GA + EWC":                 "qwen15_safetystack_s1v1_lr6e-06_ctlfix_seed*_wiki"},
+  "GradDiff + EWC":            "qwen15_graddiff_s1v1_lr6e-06_ctlfix_seed*_wiki"},
  "gpt2": {   # discussion
   "Geometry (ours)": "gpt2_geometry_s1v2_lr1x_ctlfix_seed*_wiki",
   "GA + EWC":        "gpt2_safetystack_s1v2_lr1x_ctlfix_seed*_wiki",
@@ -87,7 +88,7 @@ def panel(a, fam, c, title):
 
 fig, ax = plt.subplots(2, 3, figsize=(15, 8.6))
 panel(ax[0][0], "qwen05", 0, "Qwen2.5-0.5B: retain drift"); panel(ax[0][1], "qwen05", 1, "Qwen2.5-0.5B: held-out (eval) drift")
-panel(ax[0][2], "qwen15", 0, "Qwen2.5-1.5B: retain drift (1-2 seeds)")
+panel(ax[0][2], "qwen15", 0, "Qwen2.5-1.5B: retain drift (1-3 seeds)")
 panel(ax[1][0], "gpt2", 0, "Discussion, GPT-2: retain drift"); panel(ax[1][1], "gpt2", 1, "Discussion, GPT-2: eval drift")
 panel(ax[1][2], "hx", 0, "Discussion, HateXplain (GPT-2): retain drift")
 fig.suptitle("Damage per unit of forgetting: Geometry (ours) vs other unlearning methods (shaded = min-max over seeds; curve stops where <2 seeds reach that G)", fontsize=11.5)
