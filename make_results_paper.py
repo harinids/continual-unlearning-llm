@@ -38,7 +38,6 @@ GROUPS = {
   "Geometry (ours), lr 8e-6": "qwen15_geometry_s1v1_lr8e-06_ctlfix_seed*_wiki",
   "Geometry (ours), lr 1e-5": "qwen15_geometry_s1v1_lr1e-05_ctlfix_seed*_wiki",
   "GA + EWC":                 "qwen15_safetystack_s1v1_lr6e-06_ctlfix_seed*_wiki"},
-  "GradDiff + EWC":            "qwen15_graddiff_s1v1_lr6e-06_ctlfix_seed*_wiki"},
  "gpt2": {   # discussion
   "Geometry (ours)": "gpt2_geometry_s1v2_lr1x_ctlfix_seed*_wiki",
   "GA + EWC":        "gpt2_safetystack_s1v2_lr1x_ctlfix_seed*_wiki",

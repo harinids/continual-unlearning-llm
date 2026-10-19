@@ -50,13 +50,13 @@ qwen05,Random subspace (control),7,5.941,2.569,3,3
 qwen05,Random subspace (control),10,7.617,3.101,3,3
 qwen15,"Geometry (ours), lr 6e-6",1.5,1.148,0.948,2,2
 qwen15,"Geometry (ours), lr 6e-6",2,1.297,1.051,2,2
-qwen15,"Geometry (ours), lr 8e-6",1.5,1.107,1.008,1,1
-qwen15,"Geometry (ours), lr 8e-6",2,1.251,1.122,1,1
-qwen15,"Geometry (ours), lr 8e-6",3,1.487,1.345,1,1
-qwen15,"Geometry (ours), lr 8e-6",4,1.664,1.54,1,1
-qwen15,"Geometry (ours), lr 8e-6",5,1.8,1.692,1,1
-qwen15,"Geometry (ours), lr 8e-6",7,2.006,1.921,1,1
-qwen15,"Geometry (ours), lr 8e-6",10,2.531,2.431,1,1
+qwen15,"Geometry (ours), lr 8e-6",1.5,1.114,1.001,2,2
+qwen15,"Geometry (ours), lr 8e-6",2,1.254,1.127,2,2
+qwen15,"Geometry (ours), lr 8e-6",3,1.487,1.368,2,2
+qwen15,"Geometry (ours), lr 8e-6",4,1.702,1.581,2,2
+qwen15,"Geometry (ours), lr 8e-6",5,1.87,1.746,2,2
+qwen15,"Geometry (ours), lr 8e-6",7,2.144,2.003,2,2
+qwen15,"Geometry (ours), lr 8e-6",10,2.64,2.425,2,2
 qwen15,"Geometry (ours), lr 1e-5",1.5,1.094,1.046,1,1
 qwen15,"Geometry (ours), lr 1e-5",2,1.22,1.201,1,1
 qwen15,"Geometry (ours), lr 1e-5",3,1.424,1.468,1,1
